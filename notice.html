@@ -1,0 +1,2686 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" name="viewport"/>
+  <meta content="telephone=no,email=no,adress=no" name="format-detection"/>
+  <meta content="no-cache" http-equiv="pragma"/>
+  <meta content="no-cache" http-equiv="cache-control"/>
+  <meta content="0" http-equiv="expires"/>
+  <link href="/res/pc/css/notice/common.css?t=1725290200494" rel="stylesheet"/>
+  <link href="/res/pc/css/notice/noticeV2.css?t=1725290200494" rel="stylesheet"/>
+  <link href="/res/pc/css/notice/pop.css?t=1725290200494" rel="stylesheet"/>
+  <link href="/res/plugin/datePicker/WdatePicker.css?t=1725290200494" rel="stylesheet"/>
+  <!-- <script type="text/javascript" src="/res/pc/js/jquery.min.js?t=1725290200494" ></script> -->
+  <script src="/res/pc/js/jquery-3.7.1.min.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/js/jquery-migrate-3.4.1.min.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/js/domain.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/js/studyUtil.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/js/template-web.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/js/jquery.nicescroll.min.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/js/map.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/js/clamp.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/plugin/datePicker/WdatePicker.js?t=1725290200494" type="text/javascript">
+  </script>
+  <title>
+   收件箱
+  </title>
+ </head>
+ <body class="inboxPage">
+  <div class="noticeMain">
+   <!-- 2020-01-14 新增顶部固定div,包裹 头部固定区域-->
+   <div class="centerMain_fixed">
+    <div class="centerMain_head">
+     <div class="bnt_group">
+      <a class="jb_btn jb_btn_104 fl fs14 marginRight20 createNotice" data-type="1000" href="javascript:void(0);" style="display: none">
+       写站内信函
+      </a>
+      <a class="btnBlue btn_104 fl fs14 marginRight20 EstablishFolder" href="javascript:void(0);" tabindex="-1">
+       新建文件夹
+      </a>
+      <span class="fl line marginRight20 dividingLine">
+      </span>
+      <a class="btnBlue btn_92 fl fs14 marginRight20 btn_disabled popMoveBnt" href="javascript:void(0);">
+       移动到
+      </a>
+      <a class="btnBlue btn_92 fl fs14 btn_disabled popDeleBnt" href="javascript:void(0);">
+       删除
+      </a>
+     </div>
+     <div class="head_right fr">
+      <div class="selectClass typeClass fl">
+       <p class="selectClass_text typeClass_text">
+        <span role="button" tabindex="-1">
+         全部
+        </span>
+        <i class="arrowDown">
+        </i>
+       </p>
+       <div class="operate_con">
+        <div data-type="">
+         全部
+        </div>
+        <div data-type="0">
+         通知
+        </div>
+        <div data-type="1000">
+         站内信函
+        </div>
+        <div data-type="4000">
+         审批
+        </div>
+        <div data-type="99">
+         未读
+        </div>
+       </div>
+      </div>
+      <div class="clear_red_button fl">
+       <i>
+       </i>
+       清除红点
+      </div>
+      <div class="settingBtn fl">
+       <img src="/res/pc/images/notice/setting.png"/>
+       <span>
+        设置
+       </span>
+      </div>
+      <div aria-label="搜索组件" class="dataSearch fl" tabindex="-1">
+       <div aria-label="年份选择" class="selectYear" role="button" tabindex="0">
+        <p class="nowYear">
+         <span>
+          2024
+         </span>
+         <i>
+         </i>
+        </p>
+        <div class="yearListPop">
+         <div class="selectYearList">
+         </div>
+        </div>
+       </div>
+       <input autocomplete="off" class="dataSearch_input fl" id="searchnotice" name="" placeholder="搜索" type="text" value=""/>
+       <input aria-label="进行搜索" class="dataSearch_bnt fl" name="" type="button" value=""/>
+       <i class="cancelSearch">
+       </i>
+       <div class="searchHistory">
+        <div class="searchHistory_con">
+         <ul id="searchHistoryList">
+         </ul>
+        </div>
+        <div class="searchHistory_hs">
+         <a class="searchHistory_ss fl" href="javascript:void(0);">
+          高级搜索
+         </a>
+         <a class="searchHistory_clear fr" href="javascript:void(0);">
+          清空
+         </a>
+        </div>
+       </div>
+       <div class="highSearch">
+        <a href="javascript:void(0);">
+         高级搜索
+        </a>
+       </div>
+       <div class="popHighSearch">
+        <div class="popHead">
+         <a class="popClose fr popMoveDele popCloseBtn" href="javascript:void(0);">
+          <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+         </a>
+         <p class="fl fs18 colorDeep">
+          高级搜索
+         </p>
+        </div>
+        <div class="het62">
+        </div>
+        <div class="highSearchMain">
+         <div class="item">
+          <label>
+           关键字
+          </label>
+          <input autocomplete="off" class="txt" id="gkw" placeholder="输入关键字" type="text"/>
+         </div>
+         <div class="item">
+          <label>
+           发件人
+          </label>
+          <input autocomplete="off" class="txt" id="gname" placeholder="输入发件人姓名" type="text"/>
+         </div>
+         <div class="item">
+          <label class="fl">
+           选择时间
+          </label>
+          <div class="date-highSearch fl">
+           <input autocomplete="off" class="date start-date" id="startTime" placeholder="开始时间" readonly="readonly" type="text" value=""/>
+           <span class="icon-bg">
+           </span>
+          </div>
+          <span class="data-line fl">
+          </span>
+          <div class="date-highSearch fl">
+           <input autocomplete="off" class="date end-date" id="endTime" name="endTime" placeholder="结束时间" readonly="readonly" type="text" value=""/>
+           <span class="icon-bg">
+           </span>
+          </div>
+          <div class="clear">
+          </div>
+         </div>
+        </div>
+        <div class="popBottom">
+         <a class="jb_btn jb_btn_92 fr fs14 gsearch" href="javascript:void(0);">
+          搜索
+         </a>
+         <a class="btnBlue btn_92_cancel fr fs14 popMoveDele" href="javascript:void(0);">
+          取消
+         </a>
+        </div>
+        <div class="het72">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <ul class="breadcrumb" style="display: none;">
+     <li>
+      <a href="/pc/notice/myNotice">
+       根目录
+      </a>
+     </li>
+     <li class="active searchKey" style="display: none;">
+      <span>
+       搜索“
+      </span>
+      <span class="blue">
+      </span>
+      <span>
+       ”
+      </span>
+     </li>
+    </ul>
+    <div class="mainHead">
+     <div class="sortDiv fr up" style="display: none;" title="按时间倒序排序">
+      <span>
+       按时间排序
+      </span>
+      <i>
+      </i>
+     </div>
+     <div class="fl topic_checkAll">
+      <div class="dataBody_check">
+      </div>
+     </div>
+     <p class="fl topic_checkNum">
+      已选
+      <span>
+       0
+      </span>
+     </p>
+    </div>
+    <!-- 2020-01-14 新增顶部固定div,包裹 end  &&  新增顶部固定占位div -->
+   </div>
+   <div class="fixfill">
+   </div>
+   <!-- 2020-01-14 新增顶部固定占位div  end  -->
+   <div aria-label="收件箱" class="dataCon" tabindex="0">
+    <ul class="dataBody">
+     <div id="genFolders">
+     </div>
+     <div id="topFolders">
+     </div>
+     <div id="defFolders">
+     </div>
+     <div id="datas">
+     </div>
+    </ul>
+    <div class="data_empty" style="display: none;">
+     暂无内容
+    </div>
+    <div class="loadMore" style="">
+     <p class="loadText">
+      点击加载更多
+     </p>
+     <p class="loadingText">
+      正在加载中，请稍候...
+     </p>
+     <p class="loadEndText">
+      已经到底了
+     </p>
+    </div>
+   </div>
+  </div>
+  <!--------创建文件夹----------->
+  <div class="maskDiv popCreateFolderShowHide">
+   <div class="popDiv wid440 popCreateFolder">
+    <div class="popHead">
+     <a class="popClose fr popMoveDele popCloseBtn" href="javascript:void(0);">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep">
+      新建文件夹
+     </p>
+    </div>
+    <div class="het62">
+    </div>
+    <div class="createFolderMain">
+     <input class="cFolder_uuid" type="hidden" value=""/>
+     <input autocomplete="off" class="cFolder_name" maxlength="16" name="text" type="text" value="新建文件夹"/>
+     <div class="cFolder_div" id="sender">
+      <img class="trigger" src="/res/pc/images/notice/triGrayRight.png"/>
+      <span>
+       存放指定发件人信件
+       <span style="font-size: 12px; color:#8A8B99; margin-left: 6px;">
+        (已有&amp;nbsp
+        <span id="sender_number" style="color: #3A8BFF;">
+         0
+        </span>
+        &amp;nbsp条记录)
+       </span>
+      </span>
+      <img alt="存放指定发件人信件选择" class="cFolder_addSender" role="button" src="/res/pc/images/notice/add_btn.png" tabindex="0"/>
+     </div>
+     <div class="selectedSenderList sender_history">
+      <ul style="overflow: hidden;">
+       <div class="adddata">
+       </div>
+       <div class="data">
+       </div>
+      </ul>
+     </div>
+     <div class="cFolder_div" id="keyWord">
+      <img class="trigger" src="/res/pc/images/notice/triGrayRight.png"/>
+      <span>
+       存放指定标题关键字信件
+       <span style="font-size: 12px; color:#8A8B99; margin-left: 6px;">
+        (已有&amp;nbsp
+        <span id="keyWord_number" style="color: #3A8BFF;">
+         0
+        </span>
+        &amp;nbsp条记录)
+       </span>
+      </span>
+      <img class="cFolder_addKeyWord" src="/res/pc/images/notice/add_btn.png"/>
+     </div>
+     <div class="keyWord_history">
+     </div>
+    </div>
+    <div class="popBottom">
+     <a class="jb_btn jb_btn_92 fr fs14 confirm" href="javascript:void(0);">
+      确定
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 popMoveDele" href="javascript:void(0);">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <!--------选取收件人弹窗----------->
+  <div class="maskDiv selectPersonShowHide">
+   <div aria-label="添加人员窗口" class="popDiv wid640 selectPerson" style="max-height: 600px;" tabindex="0">
+    <div class="popHead">
+     <a aria-label="关闭添加人员窗口" class="popClose selectPersonDele fr popCloseBtn" href="javascript:">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep">
+      添加人员
+     </p>
+    </div>
+    <div class="het62">
+    </div>
+    <div class="selectPerson_module" id="selectPerson_scroll">
+     <div class="selectPerson_left" id="memberLeft">
+      <div class="dataSearch">
+       <input autocomplete="off" class="dataSearch_input fl" id="searchuser" name="" placeholder="搜索" type="text" value=""/>
+       <input aria-label="进行搜索" class="dataSearch_bnt fl" name="" tabindex="0" type="button" value=""/>
+       <i class="cancelSearch">
+       </i>
+      </div>
+      <div class="selectStudentWrap" style="position: relative;width: 99%;">
+       <div class="searchList" style="display: none;">
+        <ul class="selectStudentList">
+        </ul>
+       </div>
+       <div class="deptList datatop">
+       </div>
+       <div class="recentSenderList datatop">
+       </div>
+       <div class="funList" style="display: none;">
+       </div>
+      </div>
+     </div>
+     <div class="selectPerson_right">
+      <div class="rightTitle selectCount" style="display: none;">
+       已选
+       <span class="blue userNum" style="display: none;">
+        0人
+       </span>
+       <span class="blue deptNum" style="display: none;">
+        0职能组
+       </span>
+      </div>
+      <ul class="checkedList">
+      </ul>
+     </div>
+    </div>
+    <div class="popBottom shadowBox">
+     <a class="jb_btn jb_btn_92 fr fs14 selectPersonSure" href="javascript:void(0);">
+      确定
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 selectPersonDele" href="javascript:void(0);">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <div class="maskDiv selectKeyWordShowHide">
+   <div class="popDiv wid440 selectKeyWord" style="min-height: 380px">
+    <div class="popHead">
+     <a class="popClose selectKeyWordDele fr popCloseBtn" href="javascript:">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep" style="margin-right: 8px;">
+      设置标题关键字
+     </p>
+     <div class="fl" style="height: 100%; display: flex; align-items: center; position: relative;">
+      <div class="promptIcon">
+      </div>
+      <!-- /显示提示词 -->
+      <div class="prompt_content">
+       1.包含：标题中包含该关键字
+       <br/>
+       2.不包含：标题中不包含该关键字
+       <br/>
+       3.与：标题中同时包含两个关键字
+       <br/>
+       4.或：标题中至少包含一个关键字
+       <br/>
+       5.运算符优先级：与＞或
+       <br/>
+      </div>
+     </div>
+    </div>
+    <div class="het62">
+    </div>
+    <div class="selectKeyWord_module" id="selectKeyWord_scroll">
+     <div id="keywordTempContainer">
+      <!-- /首行关键字 -->
+      <div class="selectContainer">
+       <input class="selectKeyWord" oninput="Notice.checkKeywordNum(this)" placeholder="请输入标题关键字" type="text"/>
+       <div class="fr selectOptionFrame">
+        <p class="selectOption_text">
+         <span>
+          包含
+         </span>
+         <i class="arrowDown" style="margin-left: 20px;">
+         </i>
+        </p>
+        <div class="operate_option container" style="display: none">
+         <div class="container">
+          包含
+         </div>
+         <div class="notContainer">
+          不包含
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 添加关键字 -->
+     <div class="addTitleKeyWord">
+      <img alt="添加关键字" src="/res/pc/images/addTitleKeyWord.png"/>
+      <p>
+       加关键字
+      </p>
+     </div>
+    </div>
+    <div class="popBottom shadowBox">
+     <a class="jb_btn jb_btn_92 fr fs14 selectPersonSure" href="javascript:void(0);">
+      确定
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 selectPersonDele" href="javascript:">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <!--------移动至----------->
+  <div class="maskDiv popMoveShowHide" style="display:none;">
+   <div class="popDiv wid640 popMove folderWindow">
+    <div class="popHead">
+     <a class="popClose popMoveDele fr popCloseBtn" href="javascript:">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep">
+      移动到
+      <small class="colorShallow fs14">
+       (选择目标目录)
+      </small>
+     </p>
+    </div>
+    <div class="het62">
+    </div>
+    <div class="popMove_module" id="popMove_scroll">
+     <!--文件夹为空-->
+     <div class="popMove_empty" style="display: none;">
+      <span>
+       暂无文件夹
+      </span>
+     </div>
+     <ul class="popMove_list colorDeep fs14" id="popMove_list">
+     </ul>
+    </div>
+    <div class="popBottom shadowBox">
+     <a class="jb_btn fr fs14 jb_btn_92_disable confirm" href="javascript:void(0);">
+      确定
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 popMoveDele" href="javascript:void(0);">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <!--------删除弹窗----------->
+  <div class="maskDiv popDeleShowHide" style="display: none;" tabindex="0">
+   <div class="popDiv wid440 popMove confirmWindow">
+    <div class="popHead">
+     <a class="popClose fr popMoveDele popCloseBtn" href="javascript:void(0);">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep">
+      提示
+     </p>
+    </div>
+    <div class="het62">
+    </div>
+    <p class="popWord fs16 colorIn" tabindex="0">
+     删除文件？
+    </p>
+    <div class="popBottom">
+     <a class="jb_btn jb_btn_92 fr fs14 confirm" href="javascript:void(0);">
+      确认
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 popMoveDele cancle" href="javascript:void(0);">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <!--------设置弹窗----------->
+  <div class="maskDiv popSettingShowHide">
+   <div class="popDiv wid440 popMove" style="top: 319px; left: 257px;">
+    <div class="popHead">
+     <a class="popClose fr popMoveDele popCloseBtn" href="javascript:void(0)">
+      <img src="/res/pc/images/notice/popClose.png" style="width: 20px; height: 20px;"/>
+     </a>
+     <p class="fl fs18 colorDeep">
+      列表视图设置
+     </p>
+    </div>
+    <div class="het62">
+    </div>
+    <div class="popMain" id="modeConfigItem">
+     <div class="item">
+      <div class="modeRadio">
+       <span class="radio standardMode" data-config="0">
+       </span>
+       <label>
+        标准模式
+       </label>
+      </div>
+     </div>
+     <div class="item">
+      <div class="modeRadio">
+       <span class="radio sessionMode" data-config="1">
+       </span>
+       <label>
+        会话模式
+       </label>
+      </div>
+      <p>
+       同一原始信函的多封来往信函，转化为一条记录
+      </p>
+     </div>
+    </div>
+    <div class="popBottom">
+     <a class="jb_btn jb_btn_92 fr fs14 confirmMode" href="javascript:void(0)">
+      确定
+     </a>
+     <a class="btnBlue btn_92_cancel fr fs14 popMoveDele" href="javascript:void(0)">
+      取消
+     </a>
+    </div>
+    <div class="het72">
+    </div>
+   </div>
+  </div>
+  <!-- S 定制弹窗 指定标题关键字数量已达上限 -->
+  <div class="popErrorTipsShowHide" id="keywordErrorTip" style="display: none;">
+   <div class="popErrorDiv">
+    <div class="errorTips">
+     <img class="error_image" src="/res/pc/images/notice/error_image.png"/>
+     <p class="error_text">
+     </p>
+    </div>
+   </div>
+  </div>
+  <!-- E 指定标题关键字数量已达上限 弹窗  -->
+  <!-- 通知列表模板  -->
+  <script type="text/javascript">
+   var mirrorDomain = {
+        "www.mooc.whu.edu.cn":{
+            passport2Domain:"http://passport2.mooc.whu.edu.cn",
+            csDomain: "http://cs.ananas.mooc.whu.edu.cn",
+            panDomainHttps: "http://pan.ananas.mooc.whu.edu.cn",
+            panDomain: "http://pan.ananas.mooc.whu.edu.cn",
+            NoteDomain: "http://www.mooc.whu.edu.cn/noteyd",
+            NoteDomainHttps: "http://www.mooc.whu.edu.cn/noteyd",
+            NoticeDomain: "http://www.mooc.whu.edu.cn/notice"
+        }
+    }
+    var SHOW_ALL_STRUCT_DEPT_FIDS = [208799, 213788, 213789, 20029];//北京师范大学第二附属中学
+    if(typeof template == "undefined"){
+        $(document.body).before("<script type='text/javascript' async src='/res/js/template-web.js'><\/script>");
+    }
+    if(typeof template != "undefined"){
+        template.defaults.debug=true;
+    }
+    //注册字符编码转换
+    template.defaults.imports.getTextEncodeURI = function(content){
+        if(!content){
+            return "";
+        }
+        return encodeURIComponent(content);
+    }
+    //替换字符
+    template.defaults.imports.textReplaces = function(content,oldChar,newChar){
+        if(!content){
+            return '无标题';
+        }
+        return content.replace(oldChar, newChar);
+    }
+    template.defaults.imports.parseMirrorUrl = function(url){
+        var domain = window.location.host;
+        if(domain != 'notice.chaoxing.com'){
+            // 判断是不是走配置的域名
+            if(mirrorDomain.hasOwnProperty(domain)){
+                // 去掉协议
+                url = url.replace(/http:\/\//g,'').replace(/https:\/\//g,'');
+                url = url.replace(/notice.chaoxing.com/g,mirrorDomain[domain].NoticeDomain);
+            }else{
+                url = url.replace(/notice.chaoxing.com/g,domain);
+            }
+        }
+        return url;
+    }
+    //替换字符
+    template.defaults.imports.getArryData = function(arry,separator){
+        if(arry){
+            return arry.join(separator);
+        }
+        return "";
+    }
+    //替换字符
+    template.defaults.imports.getArryToData = function(arry,separator){
+        if(arry){
+            var nameData = "";
+            if (arry.length == 20) {
+                // 删除最后一个元素
+                arry.pop();
+                arry.push("...");
+            }
+            for(var i = 0;i<arry.length;i++){
+                var names = arry[i];
+                if(names.indexOf('~') != -1){
+                    var puid = names.split('~')[0];
+                    if(!isNaN(puid)){
+                        names = '<b class="pop_userInfo" data-id="'+puid+'">'+names.replace(puid+'~','')+'</b>';
+                    }
+                }
+                if(i==arry.length-1){
+                    nameData += names;
+                }else{
+                    nameData += names+"、";
+                }
+            }
+            return nameData;
+        }
+        return "";
+    }
+    //替换回复换行字符
+    template.defaults.imports.noticeReplaceLinefeed = function(content){
+        if(!content){
+            return "";
+        }
+        content = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        content = content.replace(/\n|\t|\r/g, "<br/>");
+        return content;
+    }
+    //替换回复换行字符
+    template.defaults.imports.noticeReplaceLinefeedToEmpty = function(content){
+        if(!content){
+            return "";
+        }
+        content = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        content = content.replace(/\n|\t|\r/g, "");
+        return content;
+    }
+    //文本转html
+    template.defaults.imports.textToHtml = function(content){
+        if(content){
+            var html='<p>';
+            html+=content.replace(/\n|\t|\r/g,'</p><p>');
+            html+='</p>';
+            return html;
+        }
+        return "";
+    }
+    //标记关键字
+    template.defaults.imports.labelKw = function(content,kw){
+        if(!content){
+            return "";
+        }
+        if(kw){
+            content = content.replace(new RegExp(kw,"g"), "<b>"+kw+"</b>");
+        }
+        return content;
+    }
+    //标记通知关键字
+    template.defaults.imports.labelNoticeKw = function(content,kw, gkw){
+        if(!content){
+            return "";
+        }
+        if(kw){
+            content = content.replace(new RegExp(kw,"g"), "<span class='blue'>"+kw+"</span>");
+        }else if(gkw){
+            content = content.replace(new RegExp(gkw,"g"), "<span class='blue'>"+gkw+"</span>");
+        }
+        return content;
+    }
+    //注册转换表情事件
+    template.defaults.imports.contentEmojiToPic = function(content){
+        if(!content){
+            return "";
+        }
+        return EmojiPlugin.contentEmojiToPic(content);
+    }
+    //注册富文本附件事件
+    template.defaults.imports.contentAttachmentRtf = function(content){
+        if(!content){
+            return "";
+        }
+        /* https://noteyd.chaoxing.com */
+        var note_domain = "https://noteyd.mooc.ucas.edu.cn";
+        console.log("打印", note_domain);
+        content.replace(/<iframe [^>]*src=['"]([^'"]+)[^>]*>/gi,function(match,capture){
+            //capture,返回每个匹配的字符串
+            var newStr = note_domain + "/attachment/" + capture;
+            content = content.replace('"'+capture+'"', newStr);
+        });
+        if(typeof RichTextUitl != "undefined"){
+            content = RichTextUitl.addLink(content);
+        }
+        return content;
+    }
+    //时间戳转日期
+    template.defaults.imports.formatDate = function(datetime){
+        if (datetime) {
+            var time = new Date(datetime);
+            // 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+            var year = time.getFullYear();
+            var month = ("0" + (time.getMonth() + 1)).slice(-2);
+            var date = ("0" + time.getDate()).slice(-2);
+            var hour = ("0" + time.getHours()).slice(-2);
+            var minute = ("0" + time.getMinutes()).slice(-2);
+            var second = ("0" + time.getSeconds()).slice(-2);
+            // 拼接 + ":" + second
+            var result = year + "-" + month + "-" + date + " " + hour + ":"
+                + minute;
+            // 返回
+            return result;
+        }
+        return "";
+    }
+    //时间戳转日期（小于一天）用于通知列表
+    template.defaults.imports.formatDateSpecial = function(datetime){
+        if (datetime) {
+            var nowdate = new Date();
+            var nowtime = nowdate.getTime();
+            var difference = nowtime-datetime;
+            if(difference <= 60000){
+                //小于一分钟
+                return '刚刚';
+            }else if(difference <= 3600000){
+                //小于一小时
+                return parseInt(difference / 60000) + '分钟前';
+            }else if(difference <= 86400000){
+                //小于一天
+                return parseInt(difference / 3600000) + '小时前';
+            }
+            var nowyear = nowdate.getFullYear();
+            var time = new Date(datetime);
+            // 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+            var year = time.getFullYear();
+            var month = ("0" + (time.getMonth() + 1)).slice(-2);
+            var date = ("0" + time.getDate()).slice(-2);
+            var hour = ("0" + time.getHours()).slice(-2);
+            var minute = ("0" + time.getMinutes()).slice(-2);
+            var second = ("0" + time.getSeconds()).slice(-2);
+            if(year == nowyear){
+                return  month + "-" + date + " " + hour + ":" + minute;
+            }
+            return year + "-" + month + "-" + date;
+        }
+        return "";
+    }
+        //时间戳转日期（小于一天）用于无障碍
+        template.defaults.imports.formatDateSpecialAria = function(datetime){
+        if (datetime) {
+            var nowdate = new Date();
+            var nowtime = nowdate.getTime();
+            var difference = nowtime-datetime;
+            if(difference <= 60000){
+                //小于一分钟
+                return '刚刚';
+            }else if(difference <= 3600000){
+                //小于一小时
+                return parseInt(difference / 60000) + '分钟前';
+            }else if(difference <= 86400000){
+                //小于一天
+                return parseInt(difference / 3600000) + '小时前';
+            }
+            var nowyear = nowdate.getFullYear();
+            var time = new Date(datetime);
+            // 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+            var year = time.getFullYear();
+            var month = ("0" + (time.getMonth() + 1)).slice(-2);
+            var date = ("0" + time.getDate()).slice(-2);
+            var hour = ("0" + time.getHours()).slice(-2);
+            var minute = ("0" + time.getMinutes()).slice(-2);
+            var second = ("0" + time.getSeconds()).slice(-2);
+            if(year == nowyear){
+                return  month + "月" + date + "日 " + hour + "时" + minute + "分";
+            }
+            return year + "年" + month + "月" + date + "日";
+        }
+        return "";
+    }
+
+    template.defaults.imports.formatFloorSpecial = function(floor){
+        if(window.i18){
+            if(floor){
+                var y = floor.substring(1);
+                var z = y.substring(0,y.length-1);
+                return '第'+" "+ z +" "+'楼';
+            }
+        }
+        return floor;
+    }
+
+    var weekDay = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    //本年显示：月-日(星期x) 时:分
+    //非本年显示：年-月-日(星期x) 时:分
+    template.defaults.imports.formatDateSpecial2 = function(datetime){
+        if (datetime) {
+            var nowdate = new Date();
+            var nowtime = nowdate.getTime();
+            var nowyear = nowdate.getFullYear();
+            var time = new Date(datetime);
+            // 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+            var year = time.getFullYear();
+            var month = ("0" + (time.getMonth() + 1)).slice(-2);
+            var date = ("0" + time.getDate()).slice(-2);
+            var hour = ("0" + time.getHours()).slice(-2);
+            var minute = ("0" + time.getMinutes()).slice(-2);
+            var second = ("0" + time.getSeconds()).slice(-2);
+            var parse_week;
+            if (time.getDay() == 1) {
+                parse_week = '星期一';
+            } else if (time.getDay() == 2) {
+                parse_week = '星期二';
+            } else if (time.getDay() == 3) {
+                parse_week = '星期三';
+            } else if (time.getDay() == 4) {
+                parse_week = '星期四';
+            } else if (time.getDay() == 5) {
+                parse_week = '星期五';
+            } else if (time.getDay() == 6) {
+                parse_week = '星期六';
+            } else if (time.getDay() == 0) {
+                parse_week = '星期日';
+            }
+            //var parse_week = weekDay[time.getDay()];
+            var parseTime = month + "-" + date + "("+parse_week+")" + " " + hour + ":" + minute;
+            if(year != nowyear){
+                parseTime =  year + "-" + parseTime;
+            }
+            return parseTime;
+        }
+        return "";
+    }
+
+    //字符串时间不显示当前年
+    template.defaults.imports.hideNowYear = function(sendTime){
+        if (sendTime) {
+            sendTime=sendTime.substring(0,sendTime.lastIndexOf(":"));
+            var time = new Date();
+            var year = time.getFullYear();
+            return sendTime.replace(year+"-","");
+        }
+        return "";
+    }
+
+    //获取展示的图片,sideLength为正方形的边长
+    template.defaults.imports.getReplyShowImg = function (img,sideLength){
+        if(!img){
+            return '';
+        }
+        var originUrl = img.imgUrl||'';
+        var newImgUrl  = originUrl.replace('origin',sideLength+'_'+sideLength+"c");
+        return newImgUrl||'';
+    }
+
+    // 获取回复举报所需的参数
+    template.defaults.imports.getReplyReportStr = function (dataJson){
+        if (!dataJson) {
+            return '';
+        }
+        let sourceContent = {};
+        if (dataJson.id) {
+            sourceContent.id = dataJson.id;
+        }
+        if (dataJson.topic_id) {
+            sourceContent.noticeIdCode = dataJson.topic_id;
+        }
+        if (dataJson.createrPuid) {
+            sourceContent.createrPuid = dataJson.createrPuid;
+        }
+        if (dataJson.img_data && dataJson.img_data.length > 0) {
+            sourceContent.imgs = dataJson.img_data;
+        }
+        if (dataJson.attachment && dataJson.attachment.length > 0) {
+            sourceContent.list_attachment = dataJson.attachment;
+        }
+        return encodeURIComponent(JSON.stringify(sourceContent));
+    }
+    // 根据type获取最近使用的logo
+    template.defaults.imports.getRecentReceiverLogo = function (val, circleLogo) {
+        if (val.type == 'user') {
+            return `http://photo.chaoxing.com/p/${val.id}_80`;
+        } else if (val.type == 'circle') {
+            return circleLogo ? circleLogo : `/res/pc/images/notice/group.png`;
+        } else if ((val.type == 'dept' || val.type == '16') && val.funDept == '1') {
+            return `/res/pc/images/notice/fundept.png`;
+        } else if (val.type == 'dept' && val.addressbookdatatype == 1) {
+            return `/res/pc/images/notice/department.png`;
+        } else if (val.type == '14' || val.type == '15' || val.type == '16' || val.type == '17' || val.type == '18') {
+            return `/res/pc/images/notice/department.png`;
+        } else if (val.type == 'dept') {
+            return `/res/pc/images/notice/team_lan.png`;
+        } else if (val.type == 'course') {
+            return `/res/pc/images/notice/course.png`;
+        } else if (val.type == 'chat') {
+            return `/res/pc/images/notice/chatgroup.png`;
+        } else {
+            return `/res/pc/images/notice/genGroup.png`;
+        }
+    }
+    /**
+     * 最近使用接收人混合类型，获取logo方法
+     * @param receivers
+     * @returns {string|*}
+     */
+    template.defaults.imports.getRecentReceiverMixTypeLogo = function (receivers){
+        let defaultLogo = `/res/pc/images/notice/recentReceiver.png`;
+        // type相同就用同类型的logo，有一个不同则用默认logo
+        if (!receivers || receivers.length == 0) {
+            return defaultLogo;
+        }
+        let type = receivers[0].type;
+        if (!type) {
+            return defaultLogo;
+        }
+        let result = true;
+        for (let receiver of receivers) {
+            if (receiver.type && (receiver.type == "user" || receiver.type != type)) {
+                result = false;
+                break;
+            }
+        }
+        // 类型一致用对应logo
+        if (result) {
+            return template.defaults.imports.getRecentReceiverLogo(receivers[0], null);
+        }
+        return defaultLogo;
+    }
+    template.defaults.imports.showAllStructDept = function (fid) {
+        if (!fid) {
+            return false;
+        }
+        return SHOW_ALL_STRUCT_DEPT_FIDS.includes(fid);
+    }
+  </script>
+  <script id="genFolder" remark="系统文件夹列表" type="text/html">
+   {{if draftDataCount && draftDataCount > 0}}
+    <li class="dataBody_td dataBody_folder" data-top="1" id="myDraftBox">
+        <div class="dataBody_check dataBody_disabled"></div>
+        <div class="dataBody_file"><img src="/res/pc/images/notice/data/draft.png"></div>
+        <div class="dataBody_name">
+            <div class="dataBody_text" data-url="/pc/draft/notice/noticeDraftBox">
+                <a class="rename_title" href="javascript:void(0);">草稿箱</a>
+            </div>
+        </div>
+        <div class="folderRight">
+            <span class="gotofolder"><span class="num">{{draftDataCount}}</span><img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png" /></span>
+        </div>
+    </li>
+    {{/if}}
+    {{if collectDataCount && collectDataCount > 0}}
+    <li class="dataBody_td dataBody_folder" data-top="1" id="myCollectionBox">
+        <div class="dataBody_check dataBody_disabled"></div>
+        <div class="dataBody_file"><img src="/res/pc/images/notice/data/collection.png"></div>
+        <div class="dataBody_name">
+            <div class="dataBody_text" data-url="/pc/collect/notice/noticeCollectBox">
+                <a class="rename_title" href="javascript:void(0);">收藏</a>
+            </div>
+        </div>
+        <div class="folderRight">
+            <span class="gotofolder"><span class="num">{{collectDataCount}}</span><img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png" /></span>
+        </div>
+    </li>
+    {{/if}}
+    {{if recycleDataCount && recycleDataCount > 0}}
+    <li class="dataBody_td dataBody_folder" data-top="1" id="myRecycleBox">
+        <div class="dataBody_check dataBody_disabled"></div>
+        <div class="dataBody_file"><img src="/res/pc/images/notice/recycleBin.png"></div>
+        <div class="dataBody_name">
+            <div class="dataBody_text" data-url="/pc/recycle/notice/noticeRecycleBox">
+                <a class="rename_title" href="javascript:void(0);">回收站</a>
+            </div>
+        </div>
+        <div class="folderRight">
+            <span class="gotofolder"><span class="num">{{recycleDataCount}}</span><img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png" /></span>
+        </div>
+    </li>
+    {{/if}}
+    {{if mySendNoticeLastTime || typeof(mySendNoticeCount)!="undefined"}}
+    <li class="dataBody_td dataBody_folder" data-top="1" id="mySendFolder">
+        <div class="dataBody_check dataBody_disabled"></div>
+        <div class="dataBody_file"><img src="/res/pc/images/notice/data/file.png"></div>
+        <div class="dataBody_name">
+            <div class="dataBody_text" data-url="/pc/notice/folderNotice">
+                
+                <a tabindex="-1" class="rename_title" href="javascript:void(0);">我发出的</a>
+            </div>
+        </div>
+        <div class="folderRight">
+            {{if mySendNoticeCount && mySendNoticeCount>0}}
+            <span class="gotofolder"><span class="num">{{mySendNoticeCount > 10000 ? '10000+':mySendNoticeCount}}</span><img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png" /></span>
+            {{else if mySendNoticeLastTime}}
+            <span class="gotofolder"><span class="num" style="padding:0;">{{formatDateSpecial(mySendNoticeLastTime)}}</span></span>
+            {{/if}}
+        </div>
+    </li>
+    {{/if}}
+  </script>
+  <script id="folder" remark="文件夹列表" type="text/html">
+   {{each folders value}}
+    <li class="dataBody_td dataBody_folder" data-id="{{value.uuid}}" data-top="{{value.top}}" id="folder_{{value.uuid}}">
+        <div class="dataBody_check" data-id="{{value.uuid}}"></div>
+        {{if isSortable}}
+        <div class="dataBody_sort" data-id="{{value.uuid}}"><div class="hoverTips">拖动可排序<i></i></div></div>
+        {{/if}}
+        <div class="dataBody_file">
+            <img src="/res/pc/images/notice/data/file.png">
+            {{if value.noReadCount>0 && value.noReadCount<100}}
+            <span class="redDot">{{value.noReadCount}}</span>
+            {{/if}}
+            {{if value.noReadCount>99}}
+            
+            <span class="redDot">99+</span>
+            {{/if}}
+        </div>
+        <div class="dataBody_name">
+            <div class="dataBody_text appoint_folder" data-url="/pc/notice/folderNotice?folderUUID={{value.uuid}}">
+                <div class="appoint_content">
+                
+                <a tabindex="-1"  class="rename_title appoint_title"  href="javascript:void(0);" >{{value.folderName}}</a>
+               
+                    <div class="appoint_mix">
+                        {{if value.senderName}}
+                        <p class="appoint_sender">指定发件人：<span class="sender">{{value.senderName}}</span></p>
+                        {{else}}
+                        <p class="appoint_sender" style="display: none">指定发件人：<span class="sender"></span></p>
+                        {{/if}}
+
+                        {{if value.keywordName}}
+                        <p class="appoint_keyWord">指定标题关键字：<span class="keyWord">{{value.keywordName}}</span></p>
+                        {{else}}
+                        <p class="appoint_keyWord" style="display: none">指定标题关键字：<span class="keyWord"></span></p>
+                        {{/if}}
+                    </div>
+                
+                </div>
+                {{if value.top == 1}}
+                <span class="tag">置顶</span>
+                {{/if}}
+            </div>
+            <div class="rename_con">
+                <input type="text" name="text" class="rename_input clickName fl" autocomplete="off" maxlength="16"/>
+                <a class="rename_yes" href="javascript:void(0);" data-id="{{value.uuid}}"></a>
+                <a class="rename_no" href="javascript:void(0);"></a>
+            </div>
+        </div>
+        <div class="operate">
+            {{if type != 1}}
+            <div class="operate_rename"><a class="colorBlue rename_bnt" href="javascript:void(0);" data-id="{{value.uuid}}">修改</a></div>
+            {{/if}}
+            <div class="operate_del"><a class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{value.uuid}}">删除</a></div>
+        </div>
+        <div class="folderRight">
+    <span class="gotofolder">
+      <span class="num">{{value.noticeCount}}</span>
+      <img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png">
+    </span>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="createfolder" remark="创建文件夹" type="text/html">
+   <li class="dataBody_td dataBody_folder createfolder">
+        <div class="dataBody_file"><img src="/res/pc/images/notice/data/file.png"></div>
+        <div class="dataBody_name">
+            <div class="rename_con" style="display: block;">
+                <input type="text" name="text" autocomplete="off" value="新建文件夹" class="rename_input clickName fl">
+                <a class="rename_yes" href="javascript:void(0);"></a>
+                <a class="rename_no" href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </li>
+  </script>
+  <script id="windowcreatefolder" remark="窗口创建文件夹" type="text/html">
+   <li class="createfolder">
+        <div class="popMove_name"><img src="/res/pc/images/notice/data/file.png">
+            <div class="rename_con" style="display:block;">
+                <input type="text" name="text" autocomplete="off" value="新建文件夹" class="rename_input clickName fl">
+                <a class="rename_yes fl" href="javascript:void(0);"></a>
+                <a class="rename_no fl" href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </li>
+  </script>
+  <script id="addfolder" remark="新增文件夹" type="text/html">
+   <li class="dataBody_td dataBody_folder" data-id="{{uuid}}" id="folder_{{uuid}}">
+        <div class="dataBody_check" data-id="{{uuid}}"></div>
+        {{if isSortable}}
+        <div class="dataBody_sort" data-id="{{uuid}}"><div class="hoverTips">拖动可排序<i></i></div></div>
+        {{/if}}
+        <div class="dataBody_file"><img src="/res/pc/images/notice/data/file.png"></div>
+
+        <div class="dataBody_name">
+            <div class="dataBody_text {{senderName || keywordName ? 'appoint_folder' : '' }}" data-url="/pc/notice/folderNotice?folderUUID={{uuid}}">
+                <div class="appoint_content">
+                <a class="rename_title {{senderName || keywordName ? 'appoint_title' : '' }}" href="javascript:void(0);" >{{folderName}}</a>
+
+                    <div class="appoint_mix">
+                        <p class="appoint_sender" {{if !senderName}} style="display: none"{{/if}}>指定发件人：<span class="sender">{{senderName}}</span></p>
+
+                        <p class="appoint_keyWord" {{if !keywordName}} style="display: none" {{/if}}>指定标题关键字：<span class="keyWord">{{keywordName}}</span></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rename_con">
+                <input type="text" name="text" class="rename_input clickName fl" autocomplete="off" maxlength="16"/>
+                <a class="rename_yes" href="javascript:void(0);" data-id="{{uuid}}"></a>
+                <a class="rename_no" href="javascript:void(0);"></a>
+            </div>
+        </div>
+
+        <div class="operate">
+            <div class="operate_rename"><a class="colorBlue rename_bnt" href="javascript:void(0);" data-id="{{uuid}}">修改</a></div>
+            <div class="operate_del"><a class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{uuid}}">删除</a></div>
+        </div>
+        <div class="folderRight">
+    <span class="gotofolder">
+      <span class="num">0</span>
+      <img class="arrowRight" src="/res/pc/images/notice/arrowGrayRight.png">
+    </span>
+        </div>
+    </li>
+  </script>
+  <script id="windowaddfolder" remark="窗口新增文件夹" type="text/html">
+   <li>
+        <div class="popMove_name" data-id="{{uuid}}">
+            <img src="/res/pc/images/notice/data/file.png"/>
+            <span class="popMove_text">{{folderName}}</span>
+        </div>
+    </li>
+  </script>
+  <script id="notice" remark="通知列表" type="text/html">
+   {{each list value}}
+    {{if value.foldFlag == '1'}}
+    <li tabindex="0" role="group" aria-label="这是一封邮件或通知" class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}" data-foldId="{{value.foldId}}" data-foldFlag="true">
+        {{else}}
+    
+
+    <li class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}" data-foldId="{{value.foldId}}" data-foldFlag="false">
+        {{/if}}
+        <div class="dataBody_check" data-id="{{value.idCode}}">
+        
+            <input type="checkbox" tabindex="-1" style="width:0;height:0">
+        </div>
+        
+        <div tabindex="0" role="link" class="openNotice" target="_blank" data-sendTag="{{value.sendTag}}" data-foldId="{{value.foldId}}"  data-sessionNum="{{value.sessionNum}}" data-url="{{value.sourceUrl?parseMirrorUrl(value.sourceUrl):'/pc/notice/'+value.idCode+'/detail?sendTag='+value.sendTag}}" style="cursor: pointer;">
+            <div class="dataBody_file"><img src="{{value.logo}}">
+                {{if value.isread == 0 && value.redDot == 0 && type != '1'}}
+                
+                <span class="redDot" aria-label="这是一条未读通知"></span>
+                {{else}}
+                
+
+                <span class="redDot" style="opacity:0"  aria-label="这是一条通知"></span>
+                {{/if}}
+            </div>
+            <div class="dataBody_infor">
+                <div class="dataBody_infor_vAlign">
+                    <div class="dataBody_text clearfix">
+                     <span class="notice_unread">
+        
+          
+              <a tabindex="-1" aria-label="通知标题"></a>
+              <a tabindex="-1" href="#"  class="notice_title">{{@labelNoticeKw(textReplaces(value.title,/\\n|\\t|\\r/g,""),kw,gkw)}}</a>
+            <!--2022-2-16 会话数量-->
+        {{if '0' && '0' == '1' && '1' && '1' == '1' && value.sourceType && value.sourceType == '1000' && value.foldFlag == 1 && value.sessionNum > 1}}
+		    <span class="emailNum">{{value.sessionNum}}</span>
+
+        {{else if  '0' && '0' == '1' && '1' && '1' == '1' && value.sourceType && value.sourceType == '1000' && value.sessionNum != '' && value.sessionNum != null}}
+            <span class="emailNum" style="display: none">{{value.sessionNum}}</span>
+
+
+        {{/if}}
+      {{if top}}
+        <span class="tag">置顶</span>
+        {{/if}}
+        </span>
+                    
+                        <a tabindex="-1" aria-label="发信时间"></a>
+                        <span class="notice_time fr" >{{formatDateSpecial2(value.insertTime)}}</span>
+                    </div>
+                    <div class="dataBody_receiver">
+                        <div class="dataReceiver_right">
+                            {{if value.folderUUID && value.folderName}}
+                            <div class="belongsfolder" style="display: block;"><i class="forderIcon"></i><span class="blue openFolder" data-url="/pc/notice/folderNotice?folderUUID={{value.folderUUID}}">{{value.folderName}}</span></div>
+                            {{/if}}
+                            {{if value.isProcess==1}}
+                            <span class="receiver_arrow"></span>
+                            {{/if}}
+                        </div>
+                        {{if !value.sourceType || value.sourceType != 10000}}
+                        {{if value.sendTag == '1'}}
+                        <span class="receiver">收件人：<span class="receiverName">{{getArryData(value.toNames,"、")}}</span></span>
+                        {{else}}
+                        <span class="receiver">发件人：<span class="receiverName">{{@labelNoticeKw(value.createrName,kw,gName)}}</span></span>
+                        {{/if}}
+                        {{if !value.extendParam || (value.extendParam && ((value.extendParam.showRead == 2 && value.sendTag == '1') || value.extendParam.showRead != 1 && value.extendParam.showRead != 2)) }}
+                        {{if value.status != -1}}
+                        
+                        <span aria-hidden="true" class="readed">已读：<span class="readNum">{{value.count_read}}/{{value.count_all}}</span></span>
+                        {{else}}
+                        <span aria-hidden="true" class="readed">发送中...</span>
+                        {{/if}}
+                        {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="operate">
+            {{if top}}
+            <div class="operate_opt operate_top"><a tabindex="-1" class="colorBlue popTopBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-top="0">取消置顶</a></div>
+            {{else}}
+            <div  class="operate_opt operate_top"><a tabindex="-1" class="colorBlue popTopBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-top="1">置顶</a></div>
+            {{/if}}
+            {{if type != '1'}}
+            <div  class="operate_opt operate_move"><a tabindex="-1" class="colorBlue popMoveBnt" href="javascript:void(0);" data-id="{{value.idCode}}">移动</a></div>
+            {{/if}}
+            <div  class="operate_opt operate_del"><a tabindex="-1" class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">删除</a></div>
+            {{if value.sendTag != 1 && value.redDot == 1}}
+            <div  class="operate_opt operate_unread"><a tabindex="-1" class="colorBlue popUnreadBnt" href="javascript:void(0);" data-id="{{value.idCode}}">标记未读</a></div>
+            {{/if}}
+            {{if value.sendTag == 1 && value.status == 0}}
+            <div  class="operate_opt operate_backNotice"><a tabindex="-1" class="colorBlue backNoticeBnt" href="javascript:void(0);" data-id="{{value.idCode}}">撤回</a></div>
+            {{/if}}
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="sessionLetters" remark="来往信函列表" type="text/html">
+   {{each list value}}
+    <li tabindex="0" role="group" aria-label="这是一封邮件或通知" class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}">
+        <div class="dataBody_check" data-id="{{value.idCode}}">
+            <input type="checkbox" aria-label="这封邮件或通知" style="width:0;height:0">
+        </div>
+        <div tabindex="0" class="openNotice" target="_blank" data-sendTag="{{value.sendTag}}" data-foldId="{{value.foldId}}"
+             data-url="{{value.sourceUrl?value.sourceUrl:'/pc/notice/'+value.idCode+'/detail'}}"
+             style="cursor: pointer;">
+            <div class="dataBody_file"><img src="{{value.logo}}">
+                {{if value.isread == 0 && value.redDot == 0 && type != '1'}}
+                <span class="redDot"></span>
+                {{/if}}
+            </div>
+            <div class="dataBody_infor">
+                <div class="dataBody_infor_vAlign">
+                    <div class="dataBody_text clearfix">
+                    <span class="notice_unread">
+                      <a href="#" tabindex="0" class="notice_title">{{@labelNoticeKw(textReplaces(value.title,/\\n|\\t|\\r/g,""),kw,gkw)}}</a>
+                    </span>
+                        <span class="notice_time fr">{{formatDateSpecial2(value.insertTime)}}</span>
+                    </div>
+                    <div class="dataBody_receiver">
+                        <div class="dataReceiver_right">
+                            {{if value.folderUUID && value.folderName}}
+                            <div class="belongsfolder" style="display: block;"><i class="forderIcon"></i><span
+                                    class="blue openFolder"
+                                    data-url="/pc/notice/folderNotice?folderUUID={{value.folderUUID}}">{{value.folderName}}</span>
+                            </div>
+                            {{/if}}
+                            {{if value.isProcess==1}}
+                            <span class="receiver_arrow"></span>
+                            {{/if}}
+                        </div>
+                        {{if !value.sourceType || value.sourceType != 10000}}
+                        {{if value.sendTag == '1'}}
+                        <span class="receiver">收件人：<span class="receiverName">{{getArryData(value.toNames,"、")}}</span></span>
+                        {{else}}
+                        <span class="receiver">发件人：<span class="receiverName">{{@labelNoticeKw(value.createrName,kw,gName)}}</span></span>
+                        {{/if}}
+                        {{if !value.extendParam || (value.extendParam && value.extendParam.showRead != 1) }}
+                            {{if value.status != -1}}
+                            <span class="readed">已读：<span class="readNum">{{value.count_read}}/{{value.count_all}}</span></span>
+                            {{else}}
+                            <span class="readed">发送中...</span>
+                            {{/if}}
+                        {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operate">
+            <div  class="operate_opt operate_del"><a tabindex="-1" class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">删除</a></div>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="spaceNotice" remark="空间通知列表" type="text/html">
+   {{each list value}}
+    <li tabindex="0" role="group" aria-label="这是一封邮件或通知" class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}">
+        <div class="dataBody_check" data-id="{{value.idCode}}">
+            <input type="checkbox" aria-label="这封邮件或通知" style="width:0;height:0">
+        </div>
+        <div tabindex="0" class="openNotice" target="_blank" data-sendTag="{{value.sendTag}}" data-url="{{value.sourceUrl?value.sourceUrl:'/pc/notice/'+value.idCode+'/detail'}}" style="cursor: pointer;">
+            <div class="dataBody_file"><img src="{{value.logo}}">
+                {{if value.isread == 0 && value.redDot == 0 && type != '1'}}
+                <span class="redDot"></span>
+                {{/if}}
+            </div>
+            <div class="dataBody_infor">
+                <div class="dataBody_infor_vAlign">
+                    <div class="dataBody_text clearfix">
+        <span class="notice_unread">
+          <a href="#" tabindex="0" class="notice_title">{{@labelNoticeKw(textReplaces(value.title,/\\n|\\t|\\r/g,""),kw,gkw)}}</a>
+        {{if top}}
+        <span class="tag">置顶</span>
+        {{/if}}
+        </span>
+                        <span class="notice_time fr">{{formatDateSpecial2(value.insertTime)}}</span>
+                    </div>
+                    <div class="dataBody_receiver">
+                        {{if value.isProcess==1}}
+                        <span class="receiver_arrow"></span>
+                        {{/if}}
+                        {{if !value.sourceType || value.sourceType != 10000}}
+                        {{if value.sendTag == '1'}}
+                        <span class="receiver">收件人：<span class="receiverName">{{getArryData(value.toNames,"、")}}</span></span>
+                        {{else}}
+                        <span class="receiver">发件人：<span class="receiverName">{{@labelNoticeKw(value.createrName,kw,gName)}}</span></span>
+                        {{/if}}
+                        {{if !value.extendParam || (value.extendParam && value.extendParam.showRead != 1) }}
+                            {{if value.status != -1}}
+                            <span class="readed">已读：<span class="readNum">{{value.count_read}}/{{value.count_all}}</span></span>
+                            {{else}}
+                            <span class="readed">发送中...</span>
+                            {{/if}}
+                        {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operate">
+            {{if top}}
+            <div class="operate_opt operate_top"><a class="colorBlue popTopBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-top="0">取消置顶</a></div>
+            {{else}}
+            <div class="operate_opt operate_top"><a class="colorBlue popTopBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-top="1">置顶</a></div>
+            {{/if}}
+            <div class="operate_opt operate_del"><a class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">删除</a></div>
+            {{if value.sendTag != 1 && value.redDot == 1}}
+            <div class="operate_opt operate_unread"><a class="colorBlue popUnreadBnt" href="javascript:void(0);" data-id="{{value.idCode}}">标记未读</a></div>
+            {{/if}}
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="draft" remark="草稿箱列表" type="text/html">
+   {{each draftList value}}
+    <li class="dataBody_td dataBody_item" data-id="{{value.id}}" id="notice_{{value.id}}">
+        <div class="dataBody_check" data-id="{{value.id}}">
+            <input type="checkbox" aria-label="这份草稿" style="width:0;height:0">
+        </div>
+        {{if value.noticeId > 0}}
+        <div tabindex="0" class="openNotice" target="_blank" data-url="/pc/notice/richtextNotice?sourceType={{value.sourceType}}&isRtf={{value.isRtf}}&draft_uuid={{value.uuid}}&noticeId={{value.noticeIdCode}}&type={{value.operTypeStr}}" style="cursor: pointer;">
+            {{else}}
+            <div tabindex="0" class="openNotice" target="_blank" data-url="/pc/notice/richtextNotice?sourceType={{value.sourceType}}&isRtf={{value.isRtf}}&draft_uuid={{value.uuid}}&noticeId=" style="cursor: pointer;">
+                {{/if}}
+                <div class="dataBody_file"><img src="{{value.logo}}">{{if value.sendTime !=null }}<span class="time-icon"></span>{{/if}}</div>
+                <div class="dataBody_infor">
+                    <div class="dataBody_infor_vAlign">
+                        <div class="dataBody_text clearfix">
+        <span class="notice_unread">
+          <a tabindex="-1" href="#" class="notice_title">{{textReplaces(value.title,/\\n|\\t|\\r/g,"")}}</a>
+        </span>
+                            {{if value.sendTime != null }}
+                            <span class="notice_time fr blue">{{formatDateSpecial2(value.sendTime)}}发出</span>
+                            {{else}}
+                            <span class="notice_time fr">{{formatDateSpecial2(value.updateTime)}}</span>
+                            {{/if}}
+                        </div>
+                        <div class="dataBody_receiver">
+                            {{if value.isProcess==1}}
+                            <span class="receiver_arrow"></span>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="operate">
+                <div class="operate_opt operate_del"><a class="colorBlue popDeleBnt" href="javascript:void(0);" data-id="{{value.id}}">删除</a></div>
+            </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="collect" remark="收藏列表" type="text/html">
+   {{each collectList value}}
+    <li tabindex="0" role="group" aria-label="这是一封邮件或通知" class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}" data-foldId="{{value.foldId}}" data-foldFlag="true">
+        <div class="dataBody_check" data-id="{{value.idCode}}">
+            <input type="checkbox" tabindex="-1" style="width:0;height:0">
+        </div>
+        <div tabindex="0" role="link" class="openNotice" target="_blank" data-sendTag="{{value.sendTag}}" data-foldId="{{value.foldId}}" data-url="{{value.sourceUrl?parseMirrorUrl(value.sourceUrl):'/pc/notice/'+value.idCode+'/detail'}}" style="cursor: pointer;">
+            <div class="dataBody_file"><img src="{{value.logo}}"></div>
+            <div class="dataBody_infor">
+                <div class="dataBody_infor_vAlign">
+                    <div class="dataBody_text clearfix">
+                        <span class="notice_unread">
+                         <a tabindex="-1" aria-label="通知标题"></a>
+                         <a tabindex="-1" href="#"  class="notice_title">{{@labelNoticeKw(textReplaces(value.title,/\\n|\\t|\\r/g,""),kw,gkw)}}</a>
+                        </span>
+                        <a tabindex="-1" aria-label="发信时间"></a>
+                        <span class="notice_time fr" >{{formatDateSpecial2(value.insertTime)}}</span>
+                    </div>
+                    <div class="dataBody_receiver">
+                        {{if !value.sourceType || value.sourceType != 10000}}
+                            {{if value.sendTag == '1'}}
+                            <span class="receiver">收件人：<span class="receiverName">{{getArryData(value.toNames,"、")}}</span></span>
+                            {{else}}
+                            <span class="receiver">发件人：<span class="receiverName">{{@labelNoticeKw(value.createrName,kw,gName)}}</span></span>
+                            {{/if}}
+                            {{if !value.extendParam || (value.extendParam && value.extendParam.showRead != 1) }}
+                                {{if value.status != -1}}
+                                <span aria-hidden="true" class="readed">已读：<span class="readNum">{{value.count_read}}/{{value.count_all}}</span></span>
+                                {{else}}
+                                <span aria-hidden="true" class="readed">发送中...</span>
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operate">
+            <div  class="operate_opt operate_del">
+                <a tabindex="-1" class="colorBlue popDeleBntx" href="javascript:void(0);" data-id="{{value.idCode}}">
+                取消收藏</a>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="recycle" remark="回收站列表" type="text/html">
+   {{each recycleList value}}
+    <li tabindex="0" role="group" aria-label="这是一封邮件或通知" class="dataBody_td dataBody_item" data-id="{{value.idCode}}" id="notice_{{value.idCode}}" data-foldId="{{value.foldId}}" data-foldFlag="true">
+        <div class="dataBody_check" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">
+            <input type="checkbox" tabindex="-1" style="width:0;height:0">
+        </div>
+        <div tabindex="0" role="link" class="openNotice" target="_blank" data-sendTag="{{value.sendTag}}" data-foldId="{{value.foldId}}" data-url="{{value.sourceUrl?parseMirrorUrl(value.sourceUrl):'/pc/notice/'+value.idCode+'/detail?sendTag='+value.sendTag}}" style="cursor: pointer;">
+            <div class="dataBody_file"><img src="{{value.logo}}"></div>
+            <div class="dataBody_infor">
+                <div class="dataBody_infor_vAlign">
+                    <div class="dataBody_text clearfix">
+                        <span class="notice_unread">
+                         <a tabindex="-1" aria-label="通知标题"></a>
+                         <a tabindex="-1" href="#"  class="notice_title">{{@labelNoticeKw(textReplaces(value.title,/\\n|\\t|\\r/g,""),kw,gkw)}}</a>
+                        </span>
+                        <a tabindex="-1" aria-label="发信时间"></a>
+                        <span class="notice_time fr" >{{formatDateSpecial2(value.insertTime)}}</span>
+                    </div>
+                    <div class="dataBody_receiver">
+                        {{if !value.sourceType || value.sourceType != 10000}}
+                        {{if value.sendTag == '1'}}
+                        <span class="receiver">收件人：<span class="receiverName">{{getArryData(value.toNames,"、")}}</span></span>
+                        {{else}}
+                        <span class="receiver">发件人：<span class="receiverName">{{@labelNoticeKw(value.createrName,kw,gName)}}</span></span>
+                        {{/if}}
+                        {{if !value.extendParam || (value.extendParam && value.extendParam.showRead != 1) }}
+                        {{if value.status != -1}}
+                        <span aria-hidden="true" class="readed">已读：<span class="readNum">{{value.count_read}}/{{value.count_all}}</span></span>
+                        {{else}}
+                        <span aria-hidden="true" class="readed">发送中...</span>
+                        {{/if}}
+                        {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operate">
+            <div  class="operate_opt operate_del">
+                <a tabindex="-1" class="colorBlue popResBntx" href="javascript:void(0);" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">
+                    恢复</a>
+            </div>
+            <div  class="operate_opt operate_del">
+                <a tabindex="-1" class="colorBlue popDeleBntx" href="javascript:void(0);" data-id="{{value.idCode}}" data-sendTag="{{value.sendTag}}">
+                    删除</a>
+            </div>
+
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="noticeFolders" remark="移动通知文件夹" type="text/html">
+   <li data-top="1">
+        <div class="popMove_name {{nowFolderUUID ? '':'nochecked'}}"  data-id="">
+            <img src="/res/pc/images/notice/data/file.png"/>
+            <span class="popMove_text">根目录</span>
+        </div>
+    </li>
+    {{each folders folder}}
+    <li data-top="{{folder.top}}">
+        <div class="popMove_name {{nowFolderUUID==folder.uuid ? 'nochecked':''}}" data-id="{{folder.uuid}}">
+            <img src="/res/pc/images/notice/data/file.png"/>
+            <span class="popMove_text">{{folder.folderName}}</span>
+            {{if folder.top == 1}}
+            <span class="tag">置顶</span>
+            {{/if}}
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="unit" remark="单位" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className unitName">单位通讯录</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                <li class="classLi" data-id='{{val.fid}}' data-key='14_{{val.fid}}' data-pid='-1' data-type="14" data-fid='{{val.fid}}' data-name='{{val.name}}' data-addressbookDataType='{{val.addressbookDataType}}'>
+                    <div class="classItem classMarginL" data-key='14_{{val.fid}}' data-id='{{val.fid}}' data-fid='{{val.fid}}' data-pid='-1' data-type="14" data-fid='{{val.fid}}' data-name='{{val.name}}' data-addressbookDataType='{{val.addressbookDataType}}'>
+                        <span class="openIcon"></span>
+                        <span class="className">{{val.name}}</span>
+                        {{if showFid && val.addressbookDataType == 1 && !isLetter || 35014 == 1385 || (showFid && val.addressbookDataType == 1 && isLetter && showAllStructDept(val.fid))}}
+                        
+                        <span class="checkbox" data-key='14_{{val.fid}}' data-id='{{val.fid}}' data-type="14" data-name='{{val.name}}' data-pic="/res/pc/images/notice/department.png" data-addressbookDataType='{{val.addressbookDataType}}'></span>
+                        {{/if}}
+                    </div>
+                    <ul class="studentsList"></ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="structures" remark="组织架构列表" type="text/html">
+   {{each list val}}
+    <li class="classLi" data-key='15_{{val.fid}}_{{val.serviceId}}' data-id='{{val.serviceId}}' data-pid='{{val.fid}}' data-serviceid='{{val.serviceId}}' data-type="15" data-ext='{{val.serviceId}}' data-fid='{{val.fid}}' data-name='{{val.name}}'>
+        <div class="classItem classMarginL" data-key='15_{{val.fid}}_{{val.serviceId}}' data-id='{{val.serviceId}}' data-pid='{{val.fid}}' data-serviceid='{{val.serviceId}}' data-type="15" data-ext='{{val.serviceId}}' data-fid='{{val.fid}}' data-name='{{val.name}}' data-page="1">
+            <span class="openIcon" data-type="15"></span>
+            <span class="className">{{val.name}}</span>
+            {{if hasCheck}}
+            <span class="checkbox" data-key='15_{{val.fid}}_{{val.serviceId}}' data-id='{{val.serviceId}}' data-fid='{{val.fid}}' data-serviceid='{{val.serviceId}}' data-type="15" data-ext='{{val.serviceId}}' data-name='{{val.name}}' data-pic="/res/pc/images/notice/department.png"></span>
+            {{/if}}
+        </div>
+        <ul class="studentsList"></ul>
+    </li>
+    {{/each}}
+  </script>
+  <script id="team" remark="团队" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">团队</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                <li class="classLi" data-id='{{val.id}}' data-key='dept_{{val.id}}' data-pid='{{val.id}}' data-type="dept" data-name='{{val.name}}' data-fid='{{fid||-1}}' data-pic="/res/pc/images/notice/team_lan.png">
+                    <div class="classItem classMarginL" data-key='dept_{{val.id}}' data-id='{{val.id}}' data-pid='{{val.id}}' data-fid='{{fid||-1}}' data-type="dept" data-name='{{val.name}}' data-pic="/res/pc/images/notice/department.png" data-page="1">
+                        <span class="openIcon"></span>
+                        <span class="className">{{val.name}}</span>
+                        <span class="checkbox" data-key='dept_{{val.id}}' data-id='{{val.id}}' data-pid='{{val.id}}' data-fid='{{fid||-1}}' data-type="dept" data-name='{{val.name}}' data-pic="/res/pc/images/notice/team_lan.png" data-count="{{val.usercount}}"></span>
+                    </div>
+                    <ul class="studentsList"></ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="dept" remark="子部门" type="text/html">
+   {{each list val}}
+    <li class="classLi" data-key='dept_{{val.id}}' data-id='{{val.id}}' data-pid='{{val.id}}' data-type="dept" data-fid='{{fid||-1}}' data-name='{{val.name}}' data-pic="{{val.custom == 1 ? '/res/pc/images/notice/team_lan.png' : ''}}" data-hideUser="{{val.hideUser}}">
+        <div class="classItem classMarginL" data-id='{{val.id}}' data-pid='{{val.id}}' data-type="dept" data-fid='{{fid}}' data-name='{{val.name}}' data-pic="{{val.custom == 1 ? '/res/pc/images/notice/team_lan.png' : ''}}" data-page="1" data-addressbookDataType='{{val.addressbookDataType}}' data-hideUser="{{val.hideUser}}">
+            <span class="openIcon" data-type="dept"></span>
+            <span class="className">{{val.name}}</span>
+            {{if hasCheck}}
+            <span class="checkbox" data-key='dept_{{val.id}}' data-id='{{val.id}}' data-pid='{{val.id}}' data-type="dept" data-fid='{{fid||-1}}' data-name='{{val.name}}' data-pic="{{val.custom == 1 ? '/res/pc/images/notice/team_lan.png' : ''}}" data-addressbookDataType='{{val.addressbookDataType}}' data-count="{{val.usercount}}" data-hideUser="{{val.hideUser}}"></span>
+            {{/if}}
+        </div>
+        <ul class="studentsList"></ul>
+    </li>
+    {{/each}}
+  </script>
+  <script id="funDept" remark="职能部门" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">职能部门</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                <li>
+                    <div class="stuItem classMarginL" data-key='dept_{{val.deptId}}' data-id='{{val.deptId}}' data-funDept="1" data-type="dept" data-pic="/res/pc/images/notice/fundept.png" data-name="{{val.deptName}}" data-unitName="{{val.unitName}} data-addressbookDataType="{{val.addressbookDataType}}">
+                        <img class="stuAvatar" src="/res/pc/images/notice/fundept.png">
+                        <div class="stuInfo">
+                            <h1>{{val.deptName}}</h1>
+                            <p>{{val.unitName}}</p>
+                        </div>
+                        <span class="checkbox" data-key='dept_{{val.deptId}}' data-id='{{val.deptId}}' data-funDept="1" data-fid='{{val.fid}}' data-type="dept" data-pic="/res/pc/images/notice/fundept.png" data-kw="{{val.deptName}}{{textReplaces(val.fullpinyin,/\ +/g,'')}}{{val.simplepinyin}}" data-name="{{val.deptName}}" data-unitName="{{val.unitName}}" data-addressbookDataType="{{val.addressbookDataType}}"></span>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="circle" remark="小组" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">{{name}}</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                <li class="classLi" data-key='circle_{{val.id}}' data-id='{{val.id}}' data-type="circle" data-name='{{val.name}}' data-pic="{{val.logo}}">
+                    <div class="classItem classMarginL" data-key='circle_{{val.id}}' data-id='{{val.id}}' data-type="circle" data-name='{{val.name}}' data-pic="{{val.logo}}" data-lastid="0">
+                        <span class="openIcon"></span>
+                        <span class="className">{{val.name}}</span>
+                        <span class="checkbox" data-key='circle_{{val.id}}' data-id='{{val.id}}' data-type="circle" data-name='{{val.name}}' data-pic="{{val.logo}}" data-count="{{val.mem_count}}"></span>
+                    </div>
+                    <ul class="studentsList"></ul>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="recentReceiver" remark="最近使用" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">{{name}}</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                
+                {{if val.top == top || (top == 0)}}
+                <li>
+                    {{if val.length == 1}}
+                    <div class="stuItem classMarginL" data-uuid='{{val.uuid}}' data-id='{{val[0].id}}' data-type="{{val[0].type}}"  data-pic="{{val[0].type == 'user'?'http://photo.chaoxing.com/p/'+val[0].id +'_80': val[0].pic}}" data-name="{{val.names}}" data-dept="{{val.dept}}" data-addressbookdatatype="{{val[0].addressbookdatatype}}">
+                    {{else}}
+                    <div class="stuItem classMarginL" data-uuid='{{val.uuid}}' data-id='{{val.uuid}}' data-type="composeType" data-pic="/res/pc/images/notice/recentReceiver.png" data-name="{{val.names}}" data-dept="{{val.dept}}">
+                    {{/if}}
+                          {{if val.length == 1}}
+                          <img class="stuAvatar" src="{{getRecentReceiverLogo(val[0],circleMap.get(val[0].id))}}">
+                          {{else}}
+                           
+                          <img class="stuAvatar" src="{{getRecentReceiverMixTypeLogo(val)}}">
+                          {{/if}}
+                        <div class="stuInfo oftenStuInfo">
+                            <div class="oftenName">{{val.names}}</div>
+                            {{if val.top == 1}}
+                                <div class="oftenUse">常用</div>
+                            {{else}}
+                                <div class="oftenUse" style="display: none">常用</div>
+                            {{/if}}
+                        </div>
+                        <div class="funBtn">
+                            <div class="addCommon" data-type="{{val.top}}">
+                                {{val.top == 0 ? '添加常用' : '取消常用'}}
+                            </div>
+                            <div class="deleteRecent">删除</div>
+                        </div>
+                        {{if val.length == 1}}
+                        <span class="checkbox"
+                              data-id="{{val.length == 1 ? val[0].id : val.uuid}}"
+                              data-type="{{val.length == 1 ? val[0].type : 'composeType'}}"
+                              data-pic="{{getRecentReceiverLogo(val[0],circleMap.get(val[0].id))}}"
+                              data-chatPic="{{val[0].pic}}"
+                              data-name="{{val.names}}"
+                              data-fid="{{val[0].fid}}"
+                              data-ext="{{val[0].ext}}"
+                              data-funDept="{{val[0].funDept}}">
+
+                        </span>
+                        {{else}}
+
+                        <span class="checkbox" data-key='user_{{val.puid}}' data-id="{{val.length == 1 ? val[0].id : val.uuid}}" data-type="{{val.length == 1 ? val[0].type : 'composeType'}}" data-pic="{{'/res/pc/images/notice/recentReceiver.png'}}" data-name="{{val.names}}" data-dept="{{val.dept}}"></span>
+                        {{/if}}
+
+                    </div>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="recentSender" remark="最近发件人" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">最近发件人</span>
+            </div>
+            <ul class="studentsList">
+                {{each list val}}
+                <li>
+                    <div class="stuItem classMarginL" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{'http://photo.chaoxing.com/p/'+val.puid +'_80'}}" data-name="{{val.name}}" data-dept="{{val.dept}}">
+                        <img class="stuAvatar" src="{{'http://photo.chaoxing.com/p/'+val.puid +'_80'}}">
+                        <div class="stuInfo">
+                            <h1>{{val.name}}</h1>
+                            <p>{{val.dept}}</p>
+                        </div>
+                        <span class="checkbox" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{'http://photo.chaoxing.com/p/'+val.puid +'_80'}}" data-name="{{val.name}}" data-dept="{{val.dept}}"></span>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+  </script>
+  <script id="course" remark="班级" type="text/html">
+   <ul class="selectStudentList">
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">{{name}}</span>
+            </div>
+            {{each list val}}
+            <ul class="studentsList">
+                <li class="classLi">
+                    <div class="classItem classMarginL">
+                        <span class="openIcon"></span><span class="className">{{val.name}}</span>
+                    </div>
+                    {{if val.clazz && val.clazz.data && val.clazz.data.length > 0}}
+                    {{each val.clazz.data clazzval}}
+                    <ul class="studentsList">
+                        <li class="classLi" data-key='course_{{clazzval.id}}' data-id='{{clazzval.id}}' data-type="course" data-name='{{clazzval.name}}'>
+                            <div class="classItem classMarginL" data-key='course_{{clazzval.id}}' data-id='{{clazzval.id}}' data-type="course" data-name='{{clazzval.name}}'  data-lastid="0">
+                                <span class="openIcon"></span>
+                                <span class="className">{{clazzval.name}}</span>
+                                <span class="checkbox" data-key='course_{{clazzval.id}}' data-id='{{clazzval.id}}' data-type="course" data-name='{{clazzval.name}}' data-pic="/res/pc/images/notice/course.png" data-count="{{clazzval.studentcount}}"></span>
+                            </div>
+                            <ul class="studentsList"></ul>
+                        </li>
+                    </ul>
+                    {{/each}}
+                    {{/if}}
+                </li>
+            </ul>
+            {{/each}}
+        </li>
+    </ul>
+  </script>
+  <script id="gens" remark="通用类型" type="text/html">
+   <ul class="selectStudentList">
+        {{each list val}}
+        <li class="classLi">
+            <div class="classItem">
+                <span class="openIcon"></span><span class="className">{{val.name}}</span>
+            </div>
+            <ul class="studentsList">
+                {{each val.level level}}
+                <li class="classLi" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png">
+                    <div class="classItem classMarginL" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png" data-page="1">
+                        <span class="openIcon"></span>
+                        <span class="className">{{level.name}}</span>
+                        <span class="checkbox" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png"></span>
+                    </div>
+                    <ul class="studentsList"></ul>
+                </li>
+                {{/each}}
+                {{each val.person person}}
+                <li>
+                    <div class="stuItem classMarginL" data-id='{{person.passportid}}' data-type="user" data-pic="{{person.pic}}" data-name="{{person.name}}" data-dept="{{person.desc}}">
+                        <img class="stuAvatar" src="{{person.pic}}">
+                        <div class="stuInfo">
+                            <h1>{{person.name}}</h1>
+                            <p>{{person.desc}}</p>
+                        </div>
+                        <span class="checkbox" data-id='{{person.passportid}}' data-type="user" data-pic="{{person.pic}}" data-name="{{person.name}}" data-dept="{{person.desc}}"></span>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+    </ul>
+  </script>
+  <script id="genchild" remark="通用类型子层级" type="text/html">
+   {{each list val}}
+    {{each val.level level}}
+    <li class="classLi" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png">
+        <div class="classItem classMarginL" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png" data-page="1">
+            <span class="openIcon"></span>
+            <span class="className">{{level.name}}</span>
+            {{if hasCheck}}
+            <span class="checkbox" data-id='{{level.id}}' data-pid='{{level.id}}' data-type="{{oType}}" data-name='{{level.name}}' data-ext="{{oId}}" data-pic="/res/pc/images/notice/genGroup.png"></span>
+            {{/if}}
+        </div>
+        <ul class="studentsList"></ul>
+    </li>
+    {{/each}}
+    {{each val.person person}}
+    <li>
+        <div class="stuItem classMarginL" data-id='{{person.passportid}}' data-type="user" data-pic="{{person.pic}}" data-name="{{person.name}}" data-dept="{{person.desc}}">
+            <img class="stuAvatar" src="{{person.pic}}">
+            <div class="stuInfo">
+                <h1>{{person.name}}</h1>
+                <p>{{person.desc}}</p>
+            </div>
+            <span class="checkbox" data-id='{{person.passportid}}' data-type="user" data-pic="{{person.pic}}" data-name="{{person.name}}" data-dept="{{person.desc}}"></span>
+        </div>
+    </li>
+    {{/each}}
+    {{/each}}
+  </script>
+  <script id="deptMem" remark="部门下成员" type="text/html">
+   {{each $data val}}
+    <li>
+        <div class="stuItem classMarginL" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}">
+            <img class="stuAvatar" src="{{val.pic}}"
+                 onerror="this.onerror=null;this.src='/res/pc/images/photo_80.jpg'">
+            <div class="stuInfo">
+                <h1>{{val.name}}</h1>
+                <p>{{val.deptName}}</p>
+            </div>
+            <span class="checkbox" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}"></span>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="circleMem" remark="小组下成员" type="text/html">
+   {{each $data val}}
+    <li>
+        <div class="stuItem classMarginL" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}">
+            <img class="stuAvatar" src="{{val.pic}}">
+            <div class="stuInfo">
+                <h1>{{val.name}}</h1>
+            </div>
+            <span class="checkbox" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}"></span>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="clazzMem" remark="班级下成员" type="text/html">
+   {{each $data val}}
+    <li>
+        <div class="stuItem classMarginL" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}">
+            <img class="stuAvatar" src="{{val.pic}}">
+            <div class="stuInfo">
+                <h1>{{val.name}}</h1>
+            </div>
+            <span class="checkbox" data-key='user_{{val.puid}}' data-id='{{val.puid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}"></span>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="genMem" remark="通用层级下成员" type="text/html">
+   {{each $data val}}
+    <li>
+        <div class="stuItem classMarginL" data-key='user_{{val.passportid}}' data-id='{{val.passportid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.desc}}">
+            <img class="stuAvatar" src="{{val.pic}}">
+            <div class="stuInfo">
+                <h1>{{val.name}}</h1>
+                <p>{{val.dept}}</p>
+            </div>
+            <span class="checkbox" data-key='user_{{val.passportid}}' data-id='{{val.passportid}}' data-type="user" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.desc}}"></span>
+        </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="selData" remark="勾选人或部门" type="text/html">
+   <li data-id="{{id}}" data-type="{{type}}" data-ext="{{ext}}" data-fid="{{fid}}" data-addressbookdatatype="{{addressbookdatatype}}">
+        {{if type == "dept"}}
+        {{if pic}}
+        <img class="checkedAvatar" src="{{pic}}">
+        {{else}}
+        <img class="checkedAvatar" src="/res/pc/images/notice/department.png">
+        {{/if}}
+        {{else if type == "circle"}}
+        {{if pic}}
+        <img class="checkedAvatar" src="{{pic}}">
+        {{else}}
+        <img class="checkedAvatar" src="/res/pc/images/notice/group.png">
+        {{/if}}
+        {{else if type == "course"}}
+        <img class="checkedAvatar" src="/res/pc/images/notice/course.png">
+        {{else if type == "user"}}
+        <img class="checkedAvatar" src="{{pic}}" onerror="this.onerror=null;this.src='/res/pc/images/photo_80.jpg'">
+        {{else if  type == "chat"}}
+        <img class="checkedAvatar" src="/res/pc/images/notice/chatgroup.png">
+        {{else}}
+        {{if pic}}
+        <img class="checkedAvatar" src="{{pic}}">
+        {{else}}
+        <img class="checkedAvatar" src="/res/pc/images/notice/genGroup.png">
+        {{/if}}
+        {{/if}}
+        <div class="checkedName" title="{{name}}">{{name}}</div>
+        {{if count}}
+        <div class="checkedNum">{{count}}人</div>
+        {{/if}}
+        <span class="checkeddelete"></span>
+    </li>
+  </script>
+  <script id="searchData" remark="本地检索部门小组课程" type="text/html">
+   <li>
+        <div class="stuItem classMarginL" data-id="{{id}}" data-fid="{{fid}}" data-type="{{type}}" data-pic="{{pic}}" data-name="{{name}}" data-ext="{{ext}}" data-addressbookDataType="{{addressbookDataType}}">
+            {{if type == "dept"}}
+            <img class="stuAvatar" src="{{pic || '/res/pc/images/notice/department.png'}}">
+            {{else if type == "circle"}}
+            <img class="stuAvatar" src="{{pic || '/res/pc/images/notice/group.png'}}">
+            {{else if type == "course"}}
+            <img class="stuAvatar" src="{{pic || '/res/pc/images/notice/course.png'}}">
+            {{else}}
+            <img class="stuAvatar" src="{{pic || '/res/pc/images/notice/genGroup.png'}}">
+            {{/if}}
+            <div class="stuInfo">
+                <h1>{{name}}</h1>
+                {{if unitname}}
+                <p>{{unitname}}</p>
+                {{/if}}
+            </div>
+            <span class="checkbox{{checkedClass?' checkbox_checked':''}}{{checkedendClass?' checkbox_disabled':''}}" data-id='{{id}}' data-type="{{type}}" data-pic="{{pic}}" data-name="{{name}}" data-ext="{{ext}}"  data-addressbookDataType="{{addressbookDataType}}" data-fid="{{fid}}" data-funDept="{{funDept}}"></span>
+        </div>
+    </li>
+  </script>
+  <script id="chooseData" remark="确认选人" type="text/html">
+   {{each list val}}
+    <p class={{isread ? 'isread':''}}>{{val.name}}<span class="persondel" data-id="{{val.id}}" data-type="{{val.type}}" data-pic="{{val.pic}}" data-name="{{val.name}}" data-dept="{{val.dept}}" data-ext="{{val.ext}}" data-addressbookdatatype="{{val.addressbookdatatype}}" data-fid="{{val.fid}}"></span></p>
+    {{/each}}
+  </script>
+  <script id="noticeReplys" remark="原站内信函富文本" type="text/html">
+   {{each $data val}}
+    <div class="prevTitle">
+        <p>原站内信函</p>
+        <div class="line"></div>
+    </div>
+    <div class="prevNotice_content">
+        <div class="noticeHead">
+            <div class="title">
+                <span>{{val.title}}</span>
+            </div>
+        </div>
+        <div class="noticeDetail_main">
+            <div class="noticeDetail_info">
+                <div class="fromItem">
+                    <span style="cursor: pointer;" class="pop_userInfo" data-id="{{val.createrPuid}}">{{val.createrName}}</span><span class="createTime">{{hideNowYear(val.sendTime)}}</span>
+                </div>
+                {{if val.toNames && val.toNames.length > 0}}
+                <div class="tiItem">收件人：<span class="to">{{@ getArryToData(val.toNames,"、")}}</span></div>
+                {{/if}}
+                {{if val.toCcNames && val.toCcNames.length > 0}}
+                <div class="tiItem">抄送：<span class="to">{{@ getArryToData(val.toCcNames,"、")}}</span></div>
+                {{/if}}
+                {{if val.status==0 && val.count_read && val.count_all && (!val.extendParam || (val.extendParam && val.extendParam.showRead != 1))}}
+                <div class="tiItem">已读：<span>{{val.count_read}}</span><span>&nbsp;/&nbsp;</span><span>{{val.count_all}}</span></div>
+                {{/if}}
+            </div>
+            {{if val.isRtf == 0}}
+            <div class="textA-noticeContent">
+                <div class="textA-content">
+                    {{@ noticeReplaceLinefeed(val.content)}}
+                </div>
+                <!--图片-->
+                <div class="textA-imgList">
+                    {{each val.imgs img}}
+                    <a class="imageView" href="javascript:void(0);" data-original="{{img.imgUrl}}">
+                        <img src="{{getReplyShowImg(img,152)}}"  data-original="{{img.imgUrl}}">
+                    </a>
+                    {{/each}}
+                </div>
+                <!--各种附件-->
+                <div class="replyAttachList replyUploadFileList">
+                    {{@ getAttr(val.attachment)}}
+                </div>
+            </div>
+            {{else}}
+            <div class="noticeContent">{{@ contentAttachmentRtf(val.rtf_content)}}</div>
+            {{/if}}
+        </div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="noticeComment" remark="评论" type="text/html">
+   {{each datas val}}
+    <div class="noticeDetail_replyItem" tabindex="0" id="replyItem_{{val.id}}">
+        <!-- 评论 增加无障碍 -->
+        <div  aria-hidden="true" class="noticeDetail_info">
+            <p>
+                <img class="noticeDetail_avatar" src="{{val.photo}}" data-id="{{val.createrPuid}}">
+                <span class="author" data-id="{{val.createrPuid}}">{{val.creater_name}}</span>
+                {{if val.top == 1}}
+                <span class="tag blue">置顶</span>
+                {{/if}}
+            </p>
+            <div class="notice_interactive">
+                <div class="like {{val.isPraise == 1 ? 'active':''}}"><i class="likeIcon"  data-id="{{val.id}}" data-type="{{type}}"></i><span class="praiseNum">{{val.praise_count&&val.praise_count>0 ? val.praise_count: ''}}</span></div>
+                <div class="comment" tabindex="-1"><i  tabindex="0" role="button"  aria-label="回复"  class="commentIcon" data-id="{{val.id}}" data-name="{{val.creater_name}}" data-id="{{val.id}}" data-root="true"></i><span>{{val.second_data&&val.second_data.length >0 ?val.second_data.length:''}}</span></div>
+                <div class="more">
+                    <span class="moreIcon"></span>
+                    <div class="operate_con">
+                        {{if sendSign == 1}}
+                        {{if !val.top}}
+                        <a class="popTopBnt" href="javascript:void(0);" data-id="{{val.id}}" id="replytop_{{val.id}}" data-top="1">置顶</a>
+                        {{else}}
+                        <a class="popTopBnt" href="javascript:void(0);" data-id="{{val.id}}" id="replytop_{{val.id}}" data-top="0">取消置顶</a>
+                        {{/if}}
+                        {{/if}}
+                        {{if mypuid == val.createrPuid}}
+                        <a class="popEditBnt" href="javascript:void(0);" data-id="{{val.id}}" id="replyedit_{{val.id}}" data-name="{{val.creater_name}}" data-id="{{val.id}}" data-root="true">编辑</a>
+                        <a class="popDeleBnt" href="javascript:void(0);" data-id="{{val.id}}" id="replydel_{{val.id}}" data-root="true">删除</a>
+                        {{else}}
+                            {{if true }}
+                            <a class="popReportBtn" href="javascript:void(0);" data-id="{{val.id}}" id="replyreport_{{val.id}}" data-root="true" data-sourcecontent="{{getReplyReportStr(val)}}">举报</a>
+                            {{/if }}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noticeReply_right">
+            <div class="otherInfo"><span class="floor" aria-label="{{formatFloorSpecial(val.floor)}}{{val.creater_name}}">{{formatFloorSpecial(val.floor)}}</span><span aria-label="在{{formatDateSpecialAria(val.create_time)}}说">{{formatDateSpecial(val.create_time)}}</span></div>
+            <div class="replyContent" data-content="{{val.content}}">{{@contentEmojiToPic(noticeReplaceLinefeed(val.content))}}</div>
+            <div class="lastEdit">{{@contentEmojiToPic(noticeReplaceLinefeed(val.updateText))}}</div>
+            <div class="replyImgList replyImgs">
+                {{each val.img_data imgs}}
+                <img class="img" src="{{getReplyShowImg(imgs,152)}}"  data-original="{{imgs.imgUrl}}">
+                {{/each}}
+            </div>
+            <div class="replyAttachList replyAttachs">
+                {{@ getAttr(val.attachment)}}
+            </div>
+            <div aria-hidden="true" class="replyReplyContainer" style="display:{{val.second_data.length >0 ? 'block':'none'}};">
+                {{each val.second_data second}}
+                <div tabindex="0" class="replyReply {{mypuid == second.createrPuid ? 'me':''}}"">
+                <div class="replyReplyer">
+                    <span class="" aria-label="{{second.creater_name}}在{{formatDateSpecialAria(second.create_time)}}回复{{formatFloorSpecial(val.floor)}}">{{second.creater_name}}</span>
+                    {{if second.replyTo}}
+                    回复<span class="">{{second.replyTo.replyToName}}</span>
+                    {{/if}}
+                </div>
+                <p class="replyReplyContent" data-content="{{second.content}}">{{@contentEmojiToPic(noticeReplaceLinefeed(second.content))}}</p>
+                <div class="replyImgList replyReplyImgList">
+                    {{each second.img_data imgs}}
+                    <img src="{{getReplyShowImg(imgs,152)}}"  data-original="{{imgs.imgUrl}}">
+                    {{/each}}
+                </div>
+                <div class="info">
+                    <span aria-hidden="true" class="time" data-createText="{{second.create_time}}">{{formatDateSpecial(second.create_time)}}</span>{{if second.updateText!=null}}<div class="lastEdit"><p>{{second.updateText}}</p></div>{{/if}}
+                    {{if mypuid == second.createrPuid}}
+                    <span aria-hidden="true"  class="replyReplyEdit" data-id="{{second.id}}" id="replyedit_{{second.id}}" data-name="{{second.creater_name}}" data-id="{{val.id}}">编辑</span>
+                    <span aria-hidden="true"  class="replyReplyRemove" data-id="{{second.id}}" id="replydel_{{second.id}}">删除</span>
+                    {{else}}
+                        {{if true }}
+                        <span aria-hidden="true"  class="replyReplyReport" data-id="{{second.id}}" id="replyreport_{{second.id}}" data-sourcecontent="{{getReplyReportStr(second)}}">举报</span>
+                        {{/if}}
+                    {{/if}}
+                    <span aria-hidden="true" class="replyReplyBtn" data-id="{{second.id}}" data-name="{{second.creater_name}}" data-id="{{val.id}}">回复</span>
+                </div>
+                <div class="replyEdit replyEditLevel2" id="edit{{second.id}}" style="display:none;">
+                    <textarea autoheight="true" id="replayText{{second.id}}" placeholder="回复 {{second.creater_name}}"></textarea>
+                    <div class="replyImgList replyUploadImgList" id="replayImgList{{second.id}}"></div>
+                    <div class="replyEditBtnGroup">
+                        <div class="imgUpload" id="filePicker{{second.id}}"></div>
+                        <div class="jb_btn jb_btn_92 fr fs14 submitBtn" id="submitBtn{{second.id}}" data-id="{{second.id}}" style="display:none;cursor: pointer;">回复</div>
+                        <div class="jb_btn jb_btn_92 fr fs14 editBtn" id="editBtn{{second.id}}" data-id="{{second.id}}" style="display:none;cursor: pointer;">确认</div>
+                        <div class="btnBlue btn_92 fr fs14 marginRight30 cancleReplyBtn" id="cancleBtn{{second.id}}" data-id="{{second.id}}" style="cursor: pointer;">取消</div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="replyEdit" id="edit{{val.id}}" style="display:none;" data-root="true">
+            <textarea autoheight="true" id="replayText{{val.id}}" placeholder="回复 {{val.creater_name}}："></textarea>
+            <div class="replyImgList replyUploadImgList" id="replayImgList{{val.id}}"></div>
+            <div class="replyAttachList replyUploadFileList" id="replayFileList{{val.id}}"></div>
+            <div class="replyEditBtnGroup">
+                <div class="imgUpload" id="filePicker{{val.id}}"></div>
+                <div class="fileUpload" id="filePickerFile{{val.id}}" style="display:none;"></div>
+            {{if true }}
+                <div class="replyagreement" id="replyagreement{{val.id}}" style="display: none;">上传图片、附件即表示您已阅读并接受
+                    
+                    <a target="_blank" href="https://homewh.chaoxing.com/agree/userAgreement">《用户协议》</a>, 请遵守该协议</div>
+            {{/if}}
+                <div tabindex="0" role="button" class="jb_btn jb_btn_92 fr fs14 submitBtn" id="submitBtn{{val.id}}" data-id="{{val.id}}" data-root="true" style="display:none;cursor: pointer;">回复</div>
+                <div class="jb_btn jb_btn_92 fr fs14 editBtn" id="editBtn{{val.id}}" data-id="{{val.id}}" data-root="true" style="display:none;cursor: pointer;">确认</div>
+                <div tabindex="0" role="button" class="btnBlue btn_92 fr fs14 marginRight30 cancleReplyBtn" id="cancleBtn{{val.id}}" data-id="{{val.id}}" data-root="true" style="cursor: pointer;">取消</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="addNoticeSecondComment" remark="新增回复评论" type="text/html">
+   <!-- 新增回复评论 增加无障碍 -->
+    <div tabindex="0" class="replyReply me">
+        <div aria-label="{{reply.creater_name||reply.createrName}}在刚刚回复{{replyTo.replyToName}}" class="replyReplyer">
+            <span aria-hidden="true" class="">{{reply.creater_name||reply.createrName}}</span>
+            {{if replyTo}}
+            回复<span class="">{{replyTo.replyToName}}</span>
+            {{/if}}
+        </div>
+        <p class="replyReplyContent" data-content="{{reply.content}}">{{@contentEmojiToPic(noticeReplaceLinefeed(reply.content))}}</p>
+        <div class="replyImgList replyReplyImgList">
+            {{each imgList imgs}}
+            <img src="{{getReplyShowImg(imgs,152)}}"  data-original="{{imgs.imgUrl}}">
+            {{/each}}
+        </div>
+        <div class="info">
+            <span aria-hidden="true" class="time">刚刚</span>
+            <span aria-hidden="true" class="replyReplyEdit" data-id="{{reply.id}}" id="replyedit_{{reply.id}}" data-name="{{reply.creater_name || reply.createrName}}" data-pid="{{reply.root_id}}">编辑</span>
+            <span aria-hidden="true" class="replyReplyRemove" data-id="{{reply.id}}" id="replydel_{{reply.id}}">删除</span>
+            <span aria-hidden="true" class="replyReplyBtn" data-id="{{reply.id}}" data-name="{{reply.creater_name || reply.createrName}}" data-pid="{{reply.root_id}}">回复</span>
+        </div>
+        <div class="replyEdit replyEditLevel2" id="edit{{reply.id}}" style="display:none;">
+            <textarea autoheight="true" id="replayText{{reply.id}}" placeholder="回复 {{reply.creater_name || reply.createrName}}"></textarea>
+            <div class="replyImgList replyUploadImgList" id="replayImgList{{reply.id}}"></div>
+            <div class="replyEditBtnGroup">
+                <div class="imgUpload" id="filePicker{{reply.id}}"></div>
+                <div class="jb_btn jb_btn_92 fr fs14 submitBtn" id="submitBtn{{reply.id}}" data-pid="{{reply.id}}" data-id="{{reply.id}}" style="cursor: pointer;">回复</div>
+                <div class="jb_btn jb_btn_92 fr fs14 editBtn" id="editBtn{{reply.id}}" data-pid="{{reply.id}}" data-id="{{reply.id}}" style="display:none;cursor: pointer;">确认</div>
+                <div class="btnBlue btn_92 fr fs14 marginRight30 cancleReplyBtn" id="cancleBtn{{reply.id}}" data-pid="{{reply.id}}" data-id="{{reply.id}}" style="cursor: pointer;">取消</div>
+            </div>
+        </div>
+    </div>
+  </script>
+  <script id="editReplayImgList" remark="编辑回复图片" type="text/html">
+   {{each imgs val}}
+    {{if isEdit}}
+    <div class="uploadImgItem">
+        <img class="img" src="{{val}}" data-url="{{getTextEncodeURI(val)}}">
+        <div class="removeImg"></div>
+    </div>
+    {{else}}
+    <img src="{{val.imgUrl}}">
+    {{/if}}
+    {{/each}}
+  </script>
+  <script id="editReplayAttachList" remark="编辑回复附件" type="text/html">
+   {{each atts val}}
+    {{if isEdit}}
+    {{@ getAttr(val,true)}}
+    {{else}}
+    {{@ getAttr(val)}}
+    {{/if}}
+    {{/each}}
+  </script>
+  <script id="praisePersonList" remark="点赞人列表" type="text/html">
+   {{each $data val}}
+    <div class="item itemRow">
+        <img class="img" src="{{val.uphoto}}" data-id="{{val.createrPuid}}"/>
+        <div class="itemRowRight">
+            <h2><span class="readerName" data-id="{{val.createrPuid}}">{{val.createUserName}}</span><span class="time">{{formatDate(val.insertTime)}}</span></h2>
+            <p>{{val.schoolName}}</p>
+        </div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="noticePersonList" remark="接收人列表" type="text/html">
+   {{each $data val}}
+    <li>
+        <div class="reader_avatar">
+            <img src="{{val.pic || '//photo.chaoxing.com/photo_80.jpg'}}" data-id="{{val.puid}}"
+                 onerror="this.onerror=null;this.src='/res/pc/images/photo_80.jpg'">
+        </div>
+        <div class="reader_con">
+            <h2>{{val.name}}</h2>
+            <p>{{val.schoolname}}</p>
+        </div>
+        <div class="reader_time">{{formatDate(val.readerTime)}}</div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="personSearchList" remark="人员检索结果列表" type="text/html">
+   {{each list val}}
+    <li data-id='{{val.puid}}' data-type="user" data-name='{{val.name}}' data-pic='{{val.pic}}' id="personSearch{{$index}}" data-dept="{{val.dept}}">
+        <img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}"
+             onerror="this.onerror=null;this.src='/res/pc/images/photo_80.jpg'">
+        <div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart">{{val.deptName}}</span></div>
+        
+        <p class="deptInfo">
+            
+            {{each val.unitNames item index}}
+                {{if index < 3}}
+                    <span>{{item}}</span>
+                    
+                    {{if index != val.unitNames.length - 1}}
+                    |
+                    {{/if}}
+                {{/if}}
+                {{if index == 3}}
+                    <span>...</span>
+                {{/if}}
+            {{/each}}
+        </p>
+    </li>
+    {{/each}}
+    
+    {{each unitlist val}}
+    <li data-id='{{val.id}}' data-type="{{val.type}}" data-name='{{val.name}}' data-pic='{{val.pic}}' id="circleSearch{{$index}}" data-addressbookDataType='{{val.addressbookDataType}}'>
+        <img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}">
+        <div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart"></span></div>
+    </li>
+    {{/each}}
+
+    {{each genlist val}}
+    <li data-id='{{val.passportid}}' data-type="user" data-name='{{val.name}}' data-pic='{{val.pic}}' id="personSearch{{$index}}" data-dept="{{val.desc}}"><img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}" ><div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart">{{val.desc}}</span></div></li>
+    {{/each}}
+    {{each funlist val}}
+    <li data-id='{{val.id}}' data-type="{{val.type}}" data-funDept="1" data-ext="{{val.ext}}" data-name='{{val.name}}' data-pic='{{val.pic}}' data-fid='{{val.fid}}' data-addressbookDataType='{{val.addressbookDataType}}' id="fundeptSearch{{$index}}"><img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}" >
+        <div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart">{{val.unitname}}</span></div></li>
+    {{/each}}
+    {{each teamlist val}}
+    <li data-id='{{val.id}}' data-type="{{val.type}}" data-name='{{val.name}}' data-pic='{{val.pic}}' id="circleSearch{{$index}}"><img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}" >
+        <div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart"></span></div></li>
+    {{/each}}
+    {{each grouplist val}}
+    <li data-id='{{val.id}}' data-type="{{val.type}}" data-name='{{val.name}}' data-pic='{{val.pic}}' id="circleSearch{{$index}}"><img src="{{val.pic?val.pic:'/res/pc/images/photo_80.jpg'}}" >
+        <div class="perInfo"><p class="per_name">{{@labelKw(val.name,kw)}}</p><span class="li_depart"></span></div></li>
+    {{/each}}
+  </script>
+  <script id="personRepeatList" remark="重复出现人员" type="text/html">
+   {{each $data list}}
+    <ul class="userList">
+        {{each list val}}
+        <li class="userItem">
+            <div class="user_check" data-id='{{val.puid}}' data-type="user" data-name='{{val.name}}' data-pic='{{val.pic}}' data-dept="{{val.dept}}"></div>
+            <div class="user_avatar"><img src="{{val.pic}}"></div>
+            <div class="user_con">
+                <h2>{{val.name}}</h2>
+                <p>{{val.dept}}</p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+  </script>
+  <script id="noticeRemindPersonList" remark="未读提醒人列表" type="text/html">
+   {{each $data val}}
+    <li class="unreaderItem {{val.checked?'active':''}}" data-puid="{{val.puid}}">
+        <i class="checkbox"></i>
+        <img src="{{val.pic}}" />
+        <p>{{val.name}}</p>
+    </li>
+    {{/each}}
+  </script>
+  <script id="senderIdentity" remark="发件人身份" type="text/html">
+   {{each $data val}}
+    <li class="{{val.checked ? 'active':''}}"><span class="sr_check" data-id="{{val.creatorId}}"></span><span class="sr_name">{{val.name}}</span></li>
+    {{/each}}
+  </script>
+  <script id="addfolderRulesList" remark="添加已选收件规则" type="text/html">
+   {{each $data val}}
+    <li class="content">
+        <img class="cFolder_checkedAvatar" src="{{val.pic}}">
+        <div class="cFolder_checkedName">{{val.name}}</div>
+        <span class="cFolder_checkeddelete" data-id="{{val.id}}" data-type="{{val.type}}" data-dept="{{val.dept}}"></span>
+    </li>
+    {{/each}}
+  </script>
+  <script id="folderRulesList" remark="已选收件规则" type="text/html">
+   {{each filters val}}
+    {{if val.type != 0}}
+    <li class="content">
+        <img class="cFolder_checkedAvatar" src="{{val.pic}}">
+        <div class="cFolder_checkedName">{{val.name}}</div>
+        <span class="cFolder_checkeddelete" data-id="{{val.id}}" data-dataId="{{val.dataId}}" data-folderId={{folderId}} data-type="{{val.type}}"></span>
+    </li>
+    {{/if}}
+    {{/each}}
+  </script>
+  <script id="folderKeywordRulesList" remark="已选关键字规则" type="text/html">
+   {{each filters val index}}
+    <div class="content">
+        <div class="left">
+            {{if index != 0}}
+                {{if val.logic == 0}}
+                <img src="/res/pc/images/notice/relative_and.png" alt="">
+                {{else}}
+                <img src="/res/pc/images/notice/relative_or.png" alt="">
+                {{/if}}
+            {{/if}}
+            <p class="keyWord">{{val.keyword}}</p>
+            {{if val.type == 0}}
+                <p class="relative">包含</p>
+            {{else}}
+                <p class="relative">不包含</p>
+            {{/if}}
+        </div>
+        <div class="right">
+            <p class="function_btn modify">修改</p>
+            <p class="function_btn delete" data-index="{{index}}">删除</p>
+        </div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="addFolderKeywordRulesList" remark="添加关键字规则" type="text/html">
+   {{each filters val index}}
+    <!-- /首行关键字 -->
+    {{if index == 0}}
+    <div class="selectContainer">
+        <input class="selectKeyWord" type="text" oninput="Notice.checkKeywordNum(this)" placeholder="请输入标题关键字" value="{{val.keyword}}">
+        <div class="fr selectOptionFrame">
+            <p class="selectOption_text "><span>{{val.type == 0 ? '包含':'不包含'}}</span><i class="arrowDown" style="margin-left: 20px;"></i></p>
+            <div class="operate_option {{val.type == 0 ? 'container':'notContainer'}}" style="display: none">
+                <div class="container">包含</div>
+                <div class="notContainer">不包含</div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+    {{if index !=0}}
+    
+    <div class="selectContainer subSelectContainer" style="display: flex; align-items: center;">
+        
+        <div class="fr selectRelativeFrame">
+                <p class="selectRelative_text "><span>{{val.logic != null && val.logic == 0 ? '与':'或'}}</span><i class="arrowDown" style="margin-left: 20px;"></i></p>
+                <div class="operate_relative {{val.logic != null && val.logic == 0 ? 'and' : 'or'}}" style="display: none">
+                    <div class="and">与</div>
+                    <div class="or">或</div>
+                </div>
+        </div>
+
+        <input class="selectKeyWord SubselectKeyWord" type="text" oninput="Notice.checkKeywordNum(this)" placeholder="请输入标题关键字" value="{{val.keyword}}">
+        
+        {{if val.type != null && val.type == 0}}
+            <div class="fr selectOptionFrame">
+                <p class="selectOption_text ">
+                    <span>包含</span>
+                    <i class="arrowDown" style="margin-left: 20px;"></i>
+                </p>
+                <div class="operate_option container">
+                    <div class="container">包含</div>
+                    <div class="notContainer">不包含</div>
+                </div>
+            </div>
+         {{else}}
+            <div class="fr selectOptionFrame">
+                <p class="selectOption_text ">
+                    <span>不包含</span>
+                    <i class="arrowDown" style="margin-left: 20px;"></i>
+                </p>
+                <div class="operate_option notContainer">
+                    <div class="container">包含</div>
+                    <div class="notContainer">不包含</div>
+                </div>
+            </div>
+        {{/if}}
+        <img id="relative_delete" class="delKeywordLine" src="/res/pc/images/notice/relative_delete.png">
+    </div>
+    {{/if}}
+ {{/each}}
+  </script>
+  <script id="addSubKeywordRules" remark="关键字规则子类" type="text/html">
+   <div class="selectContainer subSelectContainer" style="display: flex; align-items: center;">
+        
+        <div class="fr selectRelativeFrame">
+            <p class="selectRelative_text "><span>与</span><i class="arrowDown" style="margin-left: 20px;"></i></p>
+            <div class="operate_relative" style="display: none">
+                <div class="and active">与</div>
+                <div class="or">或</div>
+            </div>
+        </div>
+        <input class="selectKeyWord SubselectKeyWord" type="text" oninput="Notice.checkKeywordNum(this)" placeholder="请输入标题关键字">
+        
+        <div class="fr selectOptionFrame">
+            <p class="selectOption_text ">
+                <span>包含</span>
+                <i class="arrowDown" style="margin-left: 20px;"></i>
+            </p>
+            <div class="operate_option container">
+                <div class="container">包含</div>
+                <div class="notContainer">不包含</div>
+            </div>
+        </div>
+        <img id="relative_delete"  class="delKeywordLine" src="/res/pc/images/notice/relative_delete.png">
+    </div>
+  </script>
+  <script id="noticeSignList" remark="通知签名" type="text/html">
+   {{each $data val}}
+    <div class="signCon" data-id="{{val.id}}" data-funPuid="{{val.funPuid}}" data-name="{{val.name}}" data-title="{{val.title}}" data-content="{{val.content}}" data-status="{{val.status}}">
+        <div class="signHead">
+            <h1 class="signTitle">{{val.title}}</h1>
+            <p class="signSenderName">{{val.name}}</p>
+            <div class="signOp">
+                <span class="editSign" data-id="{{val.id}}">编辑</span>
+                <span class="delSign" data-id="{{val.id}}">删除</span>
+                {{if val.status && val.status == 1}}
+                <span class="openSign" data-id="{{val.id}}" data-status="1">开启</span>
+                {{else}}
+                <span class="openSign" data-id="{{val.id}}" data-status="0">关闭</span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="signText">{{@ noticeReplaceLinefeed(val.content)}}</div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="noticeSignPersonList" remark="通知签名关联" type="text/html">
+   {{each $data val}}
+    <div class="sign_li" data-id="{{val.creatorId}}" data-name="{{val.name}}"><span class="op_checked"></span><span class="sign_name">{{val.name}}</span></div>
+    {{/each}}
+  </script>
+  <script id="editNoticeSignPersonList" remark="通知签名关联修改选中" type="text/html">
+   <div class="sign_li edit active" data-id="{{funId}}" data-name="{{funName}}"><span class="op_checked"></span><span class="sign_name">{{funName}}</span></div>
+  </script>
+  <script id="choseNoticeSign" remark="选择通知签名" type="text/html">
+   <div class="signCon" contenteditable="false" element-id="signCon123">
+        <h1 class="signTitle" element-id="signTitle123">{{title}}</h1>
+        <div class="signText" element-id="signText123">{{@ noticeReplaceLinefeed(content)}}</div>
+    </div>
+  </script>
+  <script id="choseNoticeTemplate" remark="选择通知模板" type="text/html">
+   {{@ textToHtml(content)}}
+  </script>
+  <script id="noticeTemlateList" remark="通知模板" type="text/html">
+   {{each $data val}}
+    <li class="templateItem" data-id="{{val.id}}">
+        <div class="radiobox" ></div>
+        {{if val.rtf_content != null && val.rtf_content != ''}}
+        <div class="itemRight" data-id="{{val.id}}" data-content="{{val.rtf_content}}" data-title="{{val.title}}">
+            {{else}}
+            <div class="itemRight" data-id="{{val.id}}" data-content="{{val.content}}" data-title="{{val.title}}">
+                {{/if}}
+                <h1 class="itemTitle choose">{{val.title}}</h1>
+                <p class="itemContent choose">{{@ noticeReplaceLinefeedToEmpty(val.content)}}</p>
+                {{if val.imgs != null}}
+                <div class="imgListWrap">
+                    <div class="imgList">
+                        {{each val.imgs img index}}
+                        {{if index < 5}}
+                        <img src="{{getReplyShowImg(img,100)}}">
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    {{if val.imgsSize > 5}}
+                    <div class="imgTotal" style="top: 10px;">+<span>{{val.imgsSize-5}}</span></div>
+                    {{/if}}
+                </div>
+                {{/if}}
+                <div class="attachList">{{@ getAttr(val.theOneOfAttachment)}}</div>
+                <div class="operateCon">
+                    <div class="btn editBtn" data-id="{{val.id}}"><i></i>编辑</div>
+                    <div class="btn deleteBtn" data-id="{{val.id}}"><i></i>删除</div>
+                </div>
+            </div>
+    </li>
+    {{/each}}
+  </script>
+  <script id="hisSearcheKwList" remark="通知历史检索词" type="text/html">
+   {{each $data val}}
+    <li data-kw="{{val}}"><span>{{val}}</span><span class="searchHistory_del" data-kw="{{val}}"></span></li>
+    {{/each}}
+  </script>
+  <script remark="国际化变量" type="text/javascript">
+   window.i18={
+        "置顶": "置顶",
+        "确认": "确认",
+        "取消置顶": "取消置顶",
+        "新建文件夹": "新建文件夹",
+        "删除": "删除",
+        "删除后将无法恢复": "删除后将无法恢复",
+        "不能选择当前文件夹": "不能选择当前文件夹",
+        "文件夹内的通知也将同时删除，且无法恢复": "文件夹内的通知也将同时删除，且无法恢复",
+        "删除文件夹后，内部通知将被同步删除，如有需要请前往回收站恢复": "删除文件夹后，内部通知将被同步删除，如有需要请前往回收站恢复",
+        "单次批量操作最多可勾选60条": "单次批量操作最多可勾选60条",
+        "单次批量操作最多可勾选150条": "单次批量操作最多可勾选150条",
+        "添加成功": "添加成功",
+        "操作成功": "操作成功",
+        "修改成功": "修改成功",
+        "请选择要移动的通知": "请选择要移动的通知",
+        "请选择要移动的文件夹": "请选择要移动的文件夹",
+        "通知": "通知",
+        "站内信函": "站内信函",
+        "审批": "审批",
+        "已读": "已读",
+        "未读": "未读",
+        "标记未读": "标记未读",
+        "收件人": "收件人",
+        "抄送": "抄送",
+        "撤回后将不在收件人的列表中显示": "撤回后将不在收件人的列表中显示",
+        "确定要删除该通知吗？删除后该通知自己不可见": "确定要删除该通知吗？删除后该通知自己不可见",
+        "撤回": "撤回",
+        "确定要删除该回复？": "确定要删除该回复？",
+        "单位通讯录": "单位通讯录",
+        "组织架构": "组织架构",
+        "管理的小组": "管理的小组",
+        "加入的小组": "加入的小组",
+        "管理的班级": "管理的班级",
+        "人": "人",
+        "部门": "部门",
+        "小组": "小组",
+        "班级": "班级",
+        "分组": "分组",
+        "发送": "发送",
+        "转发": "转发",
+        "回复": "回复",
+        "回复全部": "回复全部",
+        "回复通知": "回复通知",
+        "标题限128字": "标题限128字",
+        "写通知": "写通知",
+        "编辑通知": "编辑通知",
+        "写站内信函": "写站内信函",
+        "编辑站内信函": "编辑站内信函",
+        "编辑审批": "编辑审批",
+        "请添加收件人后再发送": "请添加收件人后再发送",
+        "标题/正文/图片/附件不能同时为空": "标题/正文/图片/附件不能同时为空",
+        "用户信息异常": "用户信息异常",
+        "接收人不能为空": "接收人不能为空",
+        "用户不存在": "用户不存在",
+        "标题或内容中包含敏感词!": "标题或内容中包含敏感词!",
+        "请输入权限密码": "请输入权限密码",
+        "密码错误，请重新输入": "密码错误，请重新输入",
+        "确认离开？离开后填写数据将清空": "确认离开？离开后填写数据将清空",
+        "请选择发件人": "请选择发件人",
+        "举报的内容或者人不存在": "举报的内容或者人不存在",
+        "举报": "举报",
+        "亲,回复修改成功啦": "亲,回复修改成功啦",
+        "亲,已经成功删除啦": "亲,已经成功删除啦",
+        "回复内容不能为空": "回复内容不能为空",
+        "抱歉，回复发表失败~~(>_<)~~，请稍后再试": "抱歉，回复发表失败~~(>_<)~~，请稍后再试",
+        "修改成功": "修改成功",
+        "操作成功": "操作成功",
+        "亲,点赞成功啦": "亲,点赞成功啦",
+        "您已取消点赞": "您已取消点赞",
+        "正在提交中...": "正在提交中...",
+        "取消": "取消",
+        "操作过于频繁，请稍后再试": "操作过于频繁，请稍后再试",
+        "亲,点赞成功啦": "亲,点赞成功啦",
+        "您已取消点赞": "您已取消点赞",
+        "您已经赞过": "您已经赞过",
+        "点赞记录不存在": "点赞记录不存在",
+        "删除成功": "删除成功",
+        "删除成功!": "删除成功!",
+        "此功能暂时无法使用，给您带来不便敬请谅解": "此功能暂时无法使用，给您带来不便敬请谅解",
+        "评论区暂时关闭，给您带来不便敬请谅解": "评论区暂时关闭，给您带来不便敬请谅解",
+        "发送此": "发送此",
+        "即表示您已阅读并接受": "即表示您已阅读并接受",
+        "《用户协议》": "《用户协议》",
+        "请勿发布色情，反动等违法内容": "请勿发布色情，反动等违法内容",
+        "请遵守该协议": "请遵守该协议",
+        "请选择": "请选择",
+        "请选择身份": "请选择身份",
+        "标题和内容不能同时为空": "标题和内容不能同时为空",
+        "标题/正文不能同时为空": "标题/正文不能同时为空",
+        "新建模版": "新建模版",
+        "修改模版": "修改模版",
+        "修改签名": "修改签名",
+        "新建签名": "新建签名",
+        "确认删除？": "确认删除？",
+        "发送中...": "发送中...",
+        "确认取消收藏吗": "确认取消收藏吗",
+        "确认清除收件箱所有未读红点？清除后只消红点不计入已读": "确认清除收件箱所有未读红点？清除后只消红点不计入已读",
+        "暂无未读红点": "暂无未读红点",
+        "清除": "清除",
+        "请输入标题或内容": "请输入标题或内容",
+        "保存": "保存",
+        "定时发送": "定时发送",
+        "选择定时发送时间": "选择定时发送时间",
+        "修改时间": "修改时间",
+        "定时发送设置成功，已暂时保存在草稿箱": "定时发送设置成功，已暂时保存在草稿箱",
+        "定时发送时间不能小于当前时间": "定时发送时间不能小于当前时间",
+        "编辑定时草稿后，请点击保存，定时发送才会再次生效": "编辑定时草稿后，请点击保存，定时发送才会再次生效",
+        "我知道了": "我知道了",
+        "回收站": "回收站",
+        "删除后仅自己不可见，可到回收站恢复，确认删除？": "删除后仅自己不可见，可到回收站恢复，确认删除？",
+        "恢复": "恢复",
+        "确认恢复？": "确认恢复？",
+        "删除后将无法恢复，确认删除？": "删除后将无法恢复，确认删除？",
+        "完成": "完成",
+        "评论": "评论",
+        "评论通知": "评论通知",
+        "对收件人隐藏已读数据": "对收件人隐藏已读数据",
+        "收件人提醒设置": "收件人提醒设置",
+        "发送时间": "发送时间",
+        "若无权限密码，请联系单位管理员": "若无权限密码，请联系单位管理员",
+        "定时发送时间需比未读提醒时间早至少20分钟，请重新设置": "定时发送时间需比未读提醒时间早至少20分钟，请重新设置",
+        "已恢复至收件箱根目录下": "已恢复至收件箱根目录下",
+        "已恢复至我发出的文件夹下": "已恢复至我发出的文件夹下",
+        "无评论权限": "无评论权限",
+        "导出用户名单": "导出用户名单",
+        "下载将于后台进行，完成后将以通知形式发送结果": "下载将于后台进行，完成后将以通知形式发送结果",
+        "接收人数已超上限，请输入权限密码。若无密码请联系单位管理员": "接收人数已超上限，请输入权限密码。若无密码请联系单位管理员",
+        "密码不支持包含除数字外的其他字符": "密码不支持包含除数字外的其他字符",
+
+        "请输入标题关键字": "请输入标题关键字",
+        "设置标题关键字": "设置标题关键字",
+        "加关键字": "加关键字",
+        "与": "与",
+        "或": "或",
+        "包含": "包含",
+        "不包含": "不包含",
+        "1.包含：标题中包含该关键字": "1.包含：标题中包含该关键字",
+        "2.不包含：标题中不包含该关键字": "2.不包含：标题中不包含该关键字",
+        "3.与：标题中同时包含两个关键字": "3.与：标题中同时包含两个关键字",
+        "4.或：标题中至少包含一个关键字": "4.或：标题中至少包含一个关键字",
+        "5.运算符优先级：与＞或": "5.运算符优先级：与＞或",
+        "指定发件人数量已达上限": "指定发件人数量已达上限",
+        "指定标题关键字数量已达上限": "指定标题关键字数量已达上限",
+        "已有": "已有",
+        "条记录": "条记录",
+        "当前标题关键字文字数量已达上限": "当前标题关键字文字数量已达上限",
+        "指定发件人": "指定发件人",
+        "指定标题关键字": "指定标题关键字",
+        "是否保存本次修改?": "是否保存本次修改?",
+        "重命名": "重命名",
+        "最近使用": "最近使用",
+        "常用": "常用",
+        "添加常用": "添加常用",
+        "取消常用": "取消常用",
+        "当前部门不存在或人数为0": "当前部门不存在或人数为0",
+        "当前小组不存在或人数为0": "当前小组不存在或人数为0",
+        "当前群聊不存在或人数为0": "当前群聊不存在或人数为0",
+        "当前班级不存在或人数为0": "当前班级不存在或人数为0",
+        "有正在上传的内容!": "有正在上传的内容!",
+        "仅发件人可见所有评论": "仅发件人可见所有评论",
+        "开启此设置项后，发件人可见所有评论内容，收件人仅可见自己的评论内容": "开启此设置项后，发件人可见所有评论内容，收件人仅可见自己的评论内容",
+        "最近发件人": "最近发件人",
+        "暂无数据": "暂无数据",
+
+
+    };
+  </script>
+  <script type="text/javascript">
+   window.authUser = {
+					info:{"fid":35014,"privacy":false,"pic":"http://photo.chaoxing.com/p/236213280_80","showQrcode":0,"nick":"林佳豪","uid":164162161,"puid":236213280,"rights":1,"deptDesc":"{}","id":1191764481,"sign_ban":0,"simplepinyin":"ljh","sex":-1,"schoolname":"中国科学院大学","expireTime":-1,"inviteCode":"cdgq159","name":"林佳豪","safe":true,"fullpinyin":"lin jia hao","status":1}
+			};
+			window.sortable = true;
+			window.type = '2';//我接收的
+			window.folderUUID = '';//当前文件夹uuid
+			window.isRtf = true;// 是否是富文本
+			window.minTime = '2022-01-01';// 最小日期
+			window.maxTime = '2024-09-03';// 最大日期
+			window.nowYear = '2024';// 当前年份
+			window.onlyRead = '';//是否显示写站内信按钮
+			window.modeConfig = 0;//1-会话模式 0-标准模式
+			window.sessionSwitch = 1;//1-开启（1385单位） 0-关闭  会话模式总开关
+			window.noticeType= '';
+			window.showWriteLetter = '0';//是否显示写站内信按钮 默认0-显示 1-不显示
+			window.fidsCode = '';//加密的fids
+			window.mirrorDomain = {"GroupStatisticsDomain":"http://statisticyd.chaoxing.com","mooc1_2Domain":"http://mooc1-2.chaoxing.com","paycenterDomain":"http://paycenter.fanya.chaoxing.com","shareWh1DomainHttps":"https://sharewh1.xuexi365.com","jwFyDomain":"http://jwdatatb.fy.chaoxing.com","swfilterDomain":"http://swfilter.chaoxing.com","homeDomain":"http://home.yd.chaoxing.com","photoDomainHttps":"https://cs.mooc.ucas.edu.cn","mobileWxDomain":"http://mobilewx.chaoxing.com","structureDomain":"http://structureyd.chaoxing.com","appsDomainHttps":"http://apps.ananas.chaoxing.com","officeDomain":"http://office.chaoxing.com","smsDomain":"http://sms.chaoxing.com","csDomainHttps":"https://cs.mooc.ucas.edu.cn","specialDomainHttps":"https://special.chaoxing.com","stat2DomainHttps":"https://stat2-ans.chaoxing.com","GroupWebDomainHttps":"https://groupweb.mooc.ucas.edu.cn","v1Domain":"https://v1.chaoxing.com","passport2Domain":"http://passport.mooc.ucas.edu.cn","NoteDomain":"http://noteyd.mooc.ucas.edu.cn","iMoocDomain":"http://i.mooc.chaoxing.com","NoticeDomain":"http://notice.mooc.ucas.edu.cn","UserDomainHttps":"https://useryd.chaoxing.com","liveSuperlibDomainHttps":"https://live.superlib.com","guanliDomain":"http://guanli.chaoxing.com","shareWhDomain":"http://sharewh.chaoxing.com","d0DomainHttps":"https://d0.ananas.chaoxing.com","shareWhDomainHttps":"https://sharewh.chaoxing.com","uc1DomainHttps":"https://uc1-ans.chaoxing.com","panDomain":"http://pan.mooc.ucas.edu.cn","d0Domain":"http://d0.ananas.chaoxing.com","transydDomainHttps":"https://transyd.chaoxing.com","iDomain":"http://i.chaoxing.com","bigdataDomain":"http://bigdata-api.chaoxing.com","xDomainHttps":"https://x.chaoxing.com","mergerDomain":"http://merger.yd.chaoxing.com","mooc1ApiDomainHttps":"https://mooc.mooc.ucas.edu.cn","photoDomain":"http://cs.mooc.ucas.edu.cn","specieDomainHttps":"https://specie.chaoxing.com","UserDomain":"http://user.yd.chaoxing.com","mooc2AnsDomain":"https://mooc2-ans.chaoxing.com","passport2DomainHttps":"https://passport.mooc.ucas.edu.cn","studyApiDomain":"http://study-api.chaoxing.com","previewDomainHttps":"https://previewyd.chaoxing.com","wordDomainHttps":"https://wordyd.chaoxing.com","lcydDomainHttps":"https://lcyd.chaoxing.com","homeWhDomainHttps":"https://homewh.chaoxing.com","structureDomainHttps":"https://structureyd.chaoxing.com","messageDomainHttps":"https://message.chaoxing.com","mobileLearnFyDomain":"http://mobilelearn.fy.chaoxing.com","SpecialPackDomainHttps":"https://specialpack.chaoxing.com","pcDomain":"http://pc.chaoxing.com","wechatDomain":"https://wx.chaoxing.com","appsWhDomainHttps":"https://appswh.chaoxing.com","fystat1_1FyDomain":"http://fystat.mooc.ucas.edu.cn","groupweb2DomainHttps":"https://groupyd2.chaoxing.com","GroupWebDomain":"http://groupweb.mooc.ucas.edu.cn","passport2ApiDomainHttps":"https://passport2-api.chaoxing.com","feDomain":"https://fe.chaoxing.com","learnDomainHttps":"https://learn.chaoxing.com","csDomain":"http://cs.mooc.ucas.edu.cn","shortUrlDomain":"http://16q.cn","commendDomainHttps":"https://commendyd.chaoxing.com","exportDomain":"http://exportyd.chaoxing.com","kbDomainHttps":"https://kb.chaoxing.com","mobilelearnDomain":"http://mobilelearn.mooc.ucas.edu.cn","manageLearnDomain":"http://manage.learn.chaoxing.com","contactsDomainHttps":"https://contactsyd.chaoxing.com","cvDomain":"http://cv-p.chaoxing.com","fyLbDomainHttps":"https://fanyalubodata.fanya.chaoxing.com","mobilelearnDomainHttps":"https://mobilelearn.mooc.ucas.edu.cn","commDomain":"https://noteyd.chaoxing.com/comm/","imApi1Domain":"http://api1.im.chaoxing.com","moocDomain":"http://mooc.chaoxing.com","ketangZhizhenDomain":"https://ketang-zhizhen.chaoxing.com","mbtiDomainHttps":"https://mbti.basicedu.chaoxing.com","mooc1ApiDomain":"http://mooc.mooc.ucas.edu.cn","compDomain":"https://noteyd.chaoxing.com/comp/","ucDomain":"https://uc.chaoxing.com","astatsFyDomain":"http://fystat.mooc.ucas.edu.cn","avatarDomain":"http://photo.chaoxing.com","resourceDomainHttps":"https://resource.chaoxing.com","ktDomainHttps":"https://k.chaoxing.com","NoteDomainHttps":"https://noteyd.mooc.ucas.edu.cn","csAPIDomain":"https://cs-api.chaoxing.com","uc1Domain":"http://uc1-ans.chaoxing.com","specialRhykDomainHttps":"https://special.rhky.com","vspaceDomain":"http://vspace.chaoxing.com","moocDomainHttps":"https://mooc.chaoxing.com","learnDomain":"http://learn.chaoxing.com","GroupDomain":"http://groupyd.mooc.ucas.edu.cn","panDomainHttps":"https://pan.mooc.ucas.edu.cn","resourceDomain":"http://resource.chaoxing.com","menhuDomain":"https://mh.chaoxing.com","jjDomain":"http://cjkt.jxjy.chaoxing.com","mDomain":"http://m.chaoxing.com","specialDomain":"http://special.chaoxing.com","hustFanya":"https://hust.fanya.chaoxing.com","mooc1_3Domain":"http://mooc1-3.chaoxing.com","CourseDomain":"http://bigdata-ans.chaoxing.com","appsDomain":"http://apps.chaoxing.com","aiDomainHttps":"https://ai.chaoxing.com","GroupStatisticsDomainHttps":"https://statisticyd.chaoxing.com","GroupDomainHttps":"https://groupyd.mooc.ucas.edu.cn","isMirrorDeploy":false,"messageDomain":"http://message.chaoxing.com","contestDomain":"https://contestyd.chaoxing.com","cooperateDomainHttps":"https://cooperateyd.chaoxing.com","jwDomain":"http://jwdatatb.chaoxing.com","NoticeDomainHttps":"https://notice.mooc.ucas.edu.cn","exportDomainHttps":"https://exportyd.chaoxing.com","intellectualDomain":"https://intellectual-education-k8s.chaoxing.com","ypDomainHttps":"https://ypdownload.chaoxing.com","zhiboDomainHttps":"https://zhibo.chaoxing.com","moaDomain":"http://m.oa.chaoxing.com","wpsDomainHttps":"https://wps.chaoxing.com","mobileFyDomain":"http://mobile.fanya.chaoxing.com","mooc1Domain":"http://mooc.mooc.ucas.edu.cn","SpecialPackDomain":"http://specialpack.chaoxing.com","employmentDomainHttps":"https://appswh.chaoxing.com","mooc1DomainHttps":"https://mooc.mooc.ucas.edu.cn"};
+  </script>
+  <script src="/res/pc/template/notice/tips.js?ctx=&amp;t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/js/common/date.util.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/plugin/sortTable/sortTable.js?t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/template/notice/notice.util.js?ctx=&amp;t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/template/notice/common.util.js?ctx=&amp;t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/template/notice/pull_notice.util.js?ctx=&amp;t=1725290200494" type="text/javascript">
+  </script>
+  <script src="/res/pc/template/notice/backtop_notice.util.js?ctx=&amp;t=1725290200494" type="text/javascript">
+  </script>
+ </body>
+</html>
