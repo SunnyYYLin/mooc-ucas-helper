@@ -12,6 +12,9 @@ class Task:
         self.title = title
         self.due_date = due_date
         self.reminder_time = reminder_time
+        
+    def __str__(self) -> str:
+        return f"标题: {self.title}\n截止时间: {self.due_date}\n提醒时间: {self.reminder_time}"
 
 class Notice:
     ACC_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"

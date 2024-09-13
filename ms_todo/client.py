@@ -173,8 +173,7 @@ class MicrosoftTodoClient:
             print(f"Successfully added task '{title}' to list '{list_name}'.")
             return response.json()
         else:
-            print(f"Failed to add task. Status code: {response.status_code}")
-            return None
+            raise Exception(f"Failed to add task to list '{list_name}'. Status code: {response.status_code}")
 
 # 使用示例
 if __name__ == '__main__':
