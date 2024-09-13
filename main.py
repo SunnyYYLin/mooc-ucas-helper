@@ -67,7 +67,6 @@ if __name__ == '__main__':
                         device.push_note("Error", f"Failed to add task: {e}")
         except ConnectionError as e:
             print(f"出现错误: {e}")
+            device.push_note("Error", f"Connection Error: {e}")
             time.sleep(3)
             crawler = Crawler.create_from_cookies(COOKIE_FILE)
-        finally:
-            device.push_note("Error", "An error occurred")
