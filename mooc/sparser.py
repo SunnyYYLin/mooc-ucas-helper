@@ -163,9 +163,6 @@ class Sparser:
         # 创建 Homework 对象
         homework = Homework(course, name, start, end)
 
-        # 更新作业列表并保存
-        self._update_homeworks(homework)
-
         return homework
 
     def parse_general_notice(self, notice: dict) -> Notice:

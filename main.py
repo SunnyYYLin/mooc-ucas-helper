@@ -13,7 +13,7 @@ API_KEY_FILE = "config/api_key.txt"
 MS_GRAPH_CONFIG = "config/ms_graph.json"
 TOKEN_CACHE_FILE = "config/token_cache.json"
 LOCAL_TASK_FILE = "data/homeworks.json"
-UPDATE_INTERVAL = 10  # (s)
+UPDATE_INTERVAL = 60  # (s)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
