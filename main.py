@@ -30,6 +30,9 @@ if __name__ == '__main__':
         homework_list_id = todo_client.get_list_id('Homeworks')
     else:
         print("获取访问令牌失败")
+        
+    todo_client.get_access_token()
+    todo_client.save_token_cache(token_cache_file)
     
     while True:
         try:
@@ -50,10 +53,10 @@ if __name__ == '__main__':
                         todo_client.add_task(homework_list_id, n.task.title, n.task.due_date, n.task.reminder_time)
                     except Exception as e:
                         print(f"添加任务失败: {e}")
-                        device.push_note("Error", f"Failed to add task: {e}")
+                        # device.push_note("Error", f"Failed to add task: {e}")
                         stuck_tasks.append(n.task)
                 # 推送通知
-                device.push_note(n.message.title, n.message.content)
+                # device.push_note(n.message.title, n.message.content)
             
             # 尝试添加之前失败的任务
             if stuck_tasks:
@@ -64,9 +67,9 @@ if __name__ == '__main__':
                         stuck_tasks.remove(task)
                     except Exception as e:
                         print(f"添加任务失败: {e}")
-                        device.push_note("Error", f"Failed to add task: {e}")
+                        # device.push_note("Error", f"Failed to add task: {e}")
         except ConnectionError as e:
             print(f"出现错误: {e}")
-            device.push_note("Error", f"Connection Error: {e}")
+            # device.push_note("Error", f"Connection Error: {e}")
             time.sleep(3)
             crawler = Crawler.create_from_cookies(COOKIE_FILE)
