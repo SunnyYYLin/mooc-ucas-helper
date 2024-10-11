@@ -1,33 +1,35 @@
-import time
-from datetime import datetime
-import os
-from mooc.crawler import Crawler
-from mooc.sparser import Sparser, Homework
-from ms_todo.client import MicrosoftTodoClient
+# File: complete.py
 
-UPDATE_INTERVAL = 60 # (s)
-COOKIE_FILE = os.path.join("config", "cookies.json")
+import logging
+from datetime import datetime
+from mooc.sparser import Sparser
+from mooc.task_manager import TaskManager
+
+# 配置文件路径
+MS_GRAPH_CONFIG = "config/ms_graph.json"
+TOKEN_CACHE_FILE = "config/token_cache.json"
+LOCAL_TASK_FILE = "data/tasks.json"
+COOKIE_FILE = "config/cookies.json"
 
 if __name__ == '__main__':
-    with open(os.path.join("config", "api_key.txt"), 'r') as f:
-        api_key = f.read()
-    ms_graph_config = os.path.join("config", "ms_graph.json")
-    token_cache_file = os.path.join("config", "token_cache.json")
-    crawler = Crawler.create_from_cookies(COOKIE_FILE)
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+    # 初始化 TaskManager
+    task_manager = TaskManager(MS_GRAPH_CONFIG, TOKEN_CACHE_FILE, LOCAL_TASK_FILE)
+    
+    # 初始化 Sparser
     sparser = Sparser()
-    
-    todo_client = MicrosoftTodoClient.from_config_file(ms_graph_config)
-    token = todo_client.load_token_cache(token_cache_file)
-    if token:
-        todo_client.save_token_cache(token_cache_file)
-        todo_client.get_todo_lists()
-        homework_list_id = todo_client.get_list_id('Homeworks')
-    else:
-        print("获取访问令牌失败")
-    
-    for n in sparser.homeworks:
-        if n.end < datetime.now():
-            print(f"作业已过期!\n")
+
+    # 检查作业状态
+    for homework in sparser.homeworks:
+        if homework.end < datetime.now():
+            logging.info(f"作业已过期: {homework.name}")
             continue
-        # 添加任务到 Microsoft To Do
-        todo_client.add_task(homework_list_id, n.task.title, n.task.due_date, n.task.reminder_time)
+
+        # 检查是否需要添加作业到 Microsoft To Do
+        task_title = f"{homework.course}: {homework.name}"
+        if not task_manager.find_task_by_title(task_title):
+            task_manager.add_homework_task(task_title, homework.task.due_date, homework.task.reminder_time)
+
+    # 保存本地任务状态
+    task_manager._save_local_tasks()

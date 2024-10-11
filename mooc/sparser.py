@@ -1,20 +1,12 @@
 import os
 import json
 from datetime import datetime, timedelta
+from .task_manager import Task
 
 class Message:
     def __init__(self, title, content) -> None:
         self.title = title
         self.content = content
-
-class Task:
-    def __init__(self, title, due_date=None, reminder_time=None) -> None:
-        self.title = title
-        self.due_date = due_date
-        self.reminder_time = reminder_time
-        
-    def __str__(self) -> str:
-        return f"标题: {self.title}\n截止时间: {self.due_date}\n提醒时间: {self.reminder_time}"
 
 class Notice:
     ACC_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -138,12 +130,9 @@ class Sparser:
     ACC_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
     def __init__(self, 
-                 homework_file: str = os.path.join("data", "homeworks.json"), 
                  uuid_file: str = os.path.join("data", "uuids.json")
                  ):
-        self.homework_file = homework_file
         self.uuid_file = uuid_file
-        self.homeworks = self._load_homeworks()
         self.uuids = self._load_uuids()
         
     def _load_uuids(self) -> list:
@@ -152,23 +141,6 @@ class Sparser:
         """
         with open(self.uuid_file, 'r') as f:
             return json.load(f)
-        
-    def _load_homeworks(self) -> list:
-        """
-        加载作业数据
-        """
-        with open(self.homework_file, 'r') as f:
-            homeworks = json.load(f)
-        return [Homework.from_dict(hw) for hw in homeworks]
-
-    def _update_homeworks(self, hw: Homework) -> None:
-        """
-        更新内部的homeworks数据并保存到文件
-        """
-        self.homeworks.append(hw)
-        hw_json = [hw.to_dict() for hw in self.homeworks]
-        with open(self.homework_file, 'w') as f:
-            json.dump(hw_json, f, ensure_ascii=False, indent=4)
             
     def _update_uuids(self, current_uuids: list) -> None:
         """

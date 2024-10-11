@@ -1,3 +1,5 @@
+# File: ms_todo/client.py
+
 import json
 import requests
 import msal
@@ -175,22 +177,21 @@ class MicrosoftTodoClient:
         else:
             raise Exception(f"Failed to add task to list '{list_name}'. Status code: {response.status_code}")
 
-# 使用示例
-if __name__ == '__main__':
-    # 从配置文件创建 MicrosoftTodoClient 实例
-    todo_client = MicrosoftTodoClient.from_config_file('config/ms_graph.json')
+    def get_tasks(self, list_id):
+        """
+        获取指定 To Do 列表中的所有任务。
+        
+        :param list_id: To Do 列表的 ID
+        :return: 任务列表（字典形式）
+        """
+        if not self.access_token:
+            raise ValueError("Invalid access token. Please authenticate first.")
+        
+        headers = {"Authorization": f"Bearer {self.access_token}"}
+        url = f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks"
+        response = requests.get(url, headers=headers)
 
-    # 获取访问令牌
-    token = todo_client.load_token_cache('config/token_cache.json')
-
-    if token:
-        # 获取 Homeworks 列表的 ID
-        todo_client.save_token_cache('config/token_cache.json')
-        todo_client.get_todo_lists()
-        homework_list_id = todo_client.get_list_id('Homeworks')
-
-        if homework_list_id:
-            # 向 Homeworks 列表添加一个新的作业
-            todo_client.add_task(homework_list_id, title="Test Homework")
-    else:
-        print("获取访问令牌失败")
+        if response.status_code == 200:
+            return response.json().get("value", [])
+        else:
+            raise Exception(f"Failed to fetch tasks from list '{list_id}'. Status code: {response.status_code}")
